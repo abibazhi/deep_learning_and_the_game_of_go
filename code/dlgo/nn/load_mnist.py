@@ -31,6 +31,12 @@ def load_data_impl():
     f = np.load(path)
     x_train, y_train = f['x_train'], f['y_train']
     x_test, y_test = f['x_test'], f['y_test']
+
+     # 新增：对训练和测试数据的图像部分进行归一化
+    x_train = x_train.astype('float32') / 255.0
+    x_test = x_test.astype('float32') / 255.0
+    
+       
     f.close()
     return (x_train, y_train), (x_test, y_test)
 
