@@ -1,3 +1,7 @@
+import sys
+sys.path.append("/home/lxm/data/gamego/code")
+print(sys.path)
+
 # tag::test_setup[]
 from dlgo.nn import load_mnist
 from dlgo.nn import network
@@ -8,6 +12,7 @@ training_data, test_data = load_mnist.load_data()  # <1>
 net = network.SequentialNetwork()  # <2>
 
 net.add(DenseLayer(784, 392))  # <3>
+#net.add(DenseLayer(784, 196))  # <3>
 net.add(ActivationLayer(392))
 net.add(DenseLayer(392, 196))
 net.add(ActivationLayer(196))
