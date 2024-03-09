@@ -6,6 +6,10 @@ import numpy as np
 
 # tag::sigmoid[]
 def sigmoid_double(x):
+#    print(f"sigmoid_double传入x的值{x}")
+#if x>625000000:
+#        x = x/25000/25000
+#        print(x)
     return 1.0 / (1.0 + np.exp(-x))
 
 

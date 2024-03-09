@@ -51,14 +51,20 @@ class SequentialNetwork:  # <1>
     def train(self, training_data, epochs, mini_batch_size,
               learning_rate, test_data=None):
         n = len(training_data)
+        print(f"全部训练数据长度{n}")
         for epoch in range(epochs):  # <1>
             random.shuffle(training_data)
             mini_batches = [
                 training_data[k:k + mini_batch_size] for
                 k in range(0, n, mini_batch_size)  # <2>
             ]
+            print(f"mini_batches长度{len(mini_batches)}")
+            i = 0
             for mini_batch in mini_batches:
                 self.train_batch(mini_batch, learning_rate)  # <3>
+                i = i + 1
+                if i%200 == 0:
+                    print(f"mini_batch{i}训练完成")
             if test_data:
                 n_test = len(test_data)
                 print("Epoch {0}: {1} / {2}"
