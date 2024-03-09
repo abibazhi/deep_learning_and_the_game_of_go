@@ -8,6 +8,7 @@ from keras.layers import Dense
 
 import sys
 print(sys.path)
+print(123)
 
 np.random.seed(123)  # <1>
 X = np.load('../generated_games/features-40k.npy')  # <2>
