@@ -11,8 +11,8 @@ print(sys.path)
 print(123456)
 
 np.random.seed(123)  # <1>
-X = np.load('../generated_games/features-40k.npy')  # <2>
-Y = np.load('../generated_games/labels-40k.npy')
+X = np.load('../../generated_games/features-40k.npy')  # <2>
+Y = np.load('../../generated_games/labels-40k.npy')
 samples = X.shape[0]
 board_size = 9 * 9
 
