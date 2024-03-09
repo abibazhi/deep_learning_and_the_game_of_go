@@ -6,6 +6,9 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
 
+import sys
+print(sys.path)
+
 np.random.seed(123)  # <1>
 X = np.load('../generated_games/features-40k.npy')  # <2>
 Y = np.load('../generated_games/labels-40k.npy')
