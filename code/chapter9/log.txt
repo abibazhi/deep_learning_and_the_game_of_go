@@ -1,0 +1,172 @@
+----------------------
+Starting from chapter9/pagent13.h5 at 2024-04-01 12:31:17.279332
+Total games so far 0
+Won 9 / 32 games (0.281)
+Total games so far 240
+chapter9/agent_temp.hdf5的最后loss-0.24629877400362196
+----------------------
+Starting from chapter9/pagent13.h5 at 2024-04-01 12:51:57.120971
+Total games so far 0
+Won 17 / 32 games (0.531)
+chapter9/agent_temp.hdf5的最后loss-0.8294592990054805
+Total games so far 240
+Won 20 / 32 games (0.625)
+chapter9/agent_temp.hdf5的最后loss-0.0979488763623262
+Total games so far 480
+Won 16 / 32 games (0.500)
+chapter9/agent_temp.hdf5的最后loss0.23076189764028723
+Total games so far 720
+Won 14 / 32 games (0.438)
+Total games so far 960
+chapter9/agent_temp.hdf5的最后loss0.45592208381018773
+----------------------
+Starting from chapter9/pagent13.h5 at 2024-04-01 13:38:12.527621
+Total games so far 0
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss-0.16098758324779347
+Total games so far 480
+Won 27 / 64 games (0.422)
+Total games so far 960
+chapter9/agent_temp.hdf5的最后loss-0.05751459178122261
+----------------------
+Starting from chapter9/pagent13.h5 at 2024-04-01 14:22:35.960998
+Total games so far 0
+Won 42 / 64 games (0.656)
+New reference is chapter9/agent_00000720.hdf5
+chapter9/agent_temp.hdf5的最后loss0.5122621153942357
+Total games so far 720
+Won 35 / 64 games (0.547)
+chapter9/agent_temp.hdf5的最后loss0.0970027626143716
+Total games so far 1440
+Won 28 / 64 games (0.438)
+chapter9/agent_temp.hdf5的最后loss0.15876818343837232
+Total games so far 2160
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss-0.08124705902422781
+Total games so far 2880
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss0.10199471610609846
+Total games so far 3600
+Won 34 / 64 games (0.531)
+chapter9/agent_temp.hdf5的最后loss-0.04784614543544891
+Total games so far 4320
+Won 31 / 64 games (0.484)
+chapter9/agent_temp.hdf5的最后loss0.29070000999444495
+Total games so far 5040
+Won 32 / 64 games (0.500)
+chapter9/agent_temp.hdf5的最后loss-0.14184708074097885
+Total games so far 5760
+Won 37 / 64 games (0.578)
+chapter9/agent_temp.hdf5的最后loss0.28967427757526576
+Total games so far 6480
+Won 34 / 64 games (0.531)
+Total games so far 7200
+chapter9/agent_temp.hdf5的最后loss0.4340599942685226
+----------------------
+Starting from chapter9/agent_00000720.hdf5 at 2024-04-01 19:30:58.145389
+Total games so far 0
+Won 36 / 64 games (0.562)
+Total games so far 720
+chapter9/agent_temp.hdf5的最后loss-0.06120665766187532
+----------------------
+Starting from chapter9/agent_00000720.hdf5 at 2024-04-01 20:03:31.715587
+Total games so far 0
+Won 36 / 64 games (0.562)
+Total games so far 720
+chapter9/agent_temp.hdf5的最后loss0.13820233591159023
+----------------------
+Starting from chapter9/agent_00000720.hdf5 at 2024-04-01 20:36:00.202507
+Total games so far 0
+Won 43 / 64 games (0.672)
+New reference is chapter9/agent_00000720.hdf5
+chapter9/agent_temp.hdf5的最后loss-0.1464301280220474
+Total games so far 720
+Won 41 / 64 games (0.641)
+New reference is chapter9/agent_00001440.hdf5
+chapter9/agent_temp.hdf5的最后loss0.180999322471848
+Total games so far 1440
+Won 35 / 64 games (0.547)
+chapter9/agent_temp.hdf5的最后loss0.12300656528373714
+Total games so far 2160
+Won 36 / 64 games (0.562)
+chapter9/agent_temp.hdf5的最后loss-0.03447689752222182
+Total games so far 2880
+Won 32 / 64 games (0.500)
+chapter9/agent_temp.hdf5的最后loss-0.031984913307333
+Total games so far 3600
+Won 28 / 64 games (0.438)
+chapter9/agent_temp.hdf5的最后loss0.01422680425948475
+Total games so far 4320
+Won 39 / 64 games (0.609)
+chapter9/agent_temp.hdf5的最后loss-0.2711972844453969
+Total games so far 5040
+Won 29 / 64 games (0.453)
+chapter9/agent_temp.hdf5的最后loss-0.16185616384989643
+Total games so far 5760
+Won 26 / 64 games (0.406)
+chapter9/agent_temp.hdf5的最后loss0.041438350070108924
+Total games so far 6480
+Won 38 / 64 games (0.594)
+chapter9/agent_temp.hdf5的最后loss-0.04579051539916857
+Total games so far 7200
+Won 36 / 64 games (0.562)
+chapter9/agent_temp.hdf5的最后loss0.18878183795419454
+Total games so far 7920
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss0.2170072270936854
+Total games so far 8640
+Won 32 / 64 games (0.500)
+Total games so far 9360
+chapter9/agent_temp.hdf5的最后loss-0.1694901211458052
+----------------------
+Starting from chapter9/agent_00001440.hdf5 at 2024-04-02 03:14:19.518180
+Total games so far 0
+Won 33 / 64 games (0.516)
+chapter9/agent_temp.hdf5的最后loss0.48699396721132804
+Total games so far 720
+Won 33 / 64 games (0.516)
+chapter9/agent_temp.hdf5的最后loss0.0832786767943674
+Total games so far 1440
+Won 34 / 64 games (0.531)
+chapter9/agent_temp.hdf5的最后loss0.25191705398985725
+Total games so far 2160
+Won 31 / 64 games (0.484)
+chapter9/agent_temp.hdf5的最后loss0.2611027992317042
+Total games so far 2880
+Won 33 / 64 games (0.516)
+chapter9/agent_temp.hdf5的最后loss-0.16623008740003428
+Total games so far 3600
+Won 35 / 64 games (0.547)
+Total games so far 4320
+chapter9/agent_temp.hdf5的最后loss-0.17689235051511823
+----------------------
+Starting from chapter9/agent_00001440.hdf5 at 2024-04-02 06:43:14.167926
+Total games so far 0
+Won 34 / 64 games (0.531)
+chapter9/agent_temp.hdf5的最后loss-0.0053651875050522045
+Total games so far 720
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss0.4056648831616739
+Total games so far 1440
+Won 26 / 64 games (0.406)
+chapter9/agent_temp.hdf5的最后loss0.28929128742253696
+Total games so far 2160
+Won 39 / 64 games (0.609)
+chapter9/agent_temp.hdf5的最后loss-0.15027287729758596
+Total games so far 2880
+Won 31 / 64 games (0.484)
+chapter9/agent_temp.hdf5的最后loss0.01691407706485133
+Total games so far 3600
+Won 32 / 64 games (0.500)
+Total games so far 4320
+chapter9/agent_temp.hdf5的最后loss-0.062020908071036836
+----------------------
+Starting from chapter9/agent_00001440.hdf5 at 2024-04-02 09:51:03.410012
+Total games so far 0
+Won 29 / 64 games (0.453)
+chapter9/agent_temp.hdf5的最后loss0.11395126689908396
+Total games so far 960
+Won 30 / 64 games (0.469)
+chapter9/agent_temp.hdf5的最后loss0.033421098267071125
+Total games so far 1920
+Won 34 / 64 games (0.531)
