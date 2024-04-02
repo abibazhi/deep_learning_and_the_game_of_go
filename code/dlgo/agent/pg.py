@@ -94,12 +94,15 @@ class PolicyAgent(Agent):
         h5file['encoder'].attrs['board_height'] = self._encoder.board_height
         h5file.create_group('model')
         kerasutil.save_model_to_hdf5_group(self._model, h5file['model'])
+        print('保存成功，新的训练agent')
 
-    def train(self, experience, lr=0.0000001, clipnorm=1.0, batch_size=512):
+    def train(self, experience, lr=0.0000001, clipnorm=1.0, batch_size=1024):
         opt = SGD(lr=lr, clipnorm=clipnorm)
         self._model.compile(loss='categorical_crossentropy', optimizer=opt)
 
         n = experience.states.shape[0]
+        batch_size = int(n/(960/24)) + 1
+
         # Translate the actions/rewards.
         num_moves = self._encoder.board_width * self._encoder.board_height
         y = np.zeros((n, num_moves))
@@ -108,10 +111,20 @@ class PolicyAgent(Agent):
             reward = experience.rewards[i]
             y[i][action] = reward
 
-        self._model.fit(
+        history = self._model.fit(
             experience.states, y,
             batch_size=batch_size,
             epochs=1)
+        
+        final_loss = history.history['loss'][-1]
+        print(f"batchsize=n/(720/18)={batch_size}, n={n},lr={lr}")
+        print("this is policyagent, train finished, print the final_loss")
+        print(final_loss)
+        return final_loss
+
+        #log_file.write('----------train end------------\n')
+        #log_file.write(final_loss)
+        #log_file.write('----------train log end------------\n')
 
 
 def load_policy_agent(h5file):

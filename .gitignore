@@ -1,3 +1,5 @@
+*.h5
+*.hdf5
 code/cks/
 code/data/
 # Byte-compiled / optimized / DLL files
