@@ -1,0 +1,182 @@
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 17:50:01.595203
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 17:51:42.299787
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 17:52:03.907195
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 17:57:18.435360
+Total games so far 0
+----------------------
+Starting from chapter11/qagent19.hdf5 at 2024-04-02 18:02:39.256147
+Total games so far 0
+----------------------
+Starting from chapter11/qagent19.hdf5 at 2024-04-02 18:15:30.758956
+Total games so far 0
+----------------------
+Starting from chapter11/qagent19.hdf5 at 2024-04-02 18:17:11.980944
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 18:58:15.201771
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 19:05:30.371561
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 19:08:19.403236
+Total games so far 0
+----------------------
+Starting from chapter11/qagent11.hdf5 at 2024-04-02 19:09:49.282134
+Total games so far 0
+----------------------
+Starting from chapter11/qagent9.hdf5 at 2024-04-02 19:19:17.711043
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 19:22:53.706156
+Total games so far 0
+Won 34 / 64 games (0.531)
+----------------------
+Starting from chapter11/qagent5.hdf5 at 2024-04-02 19:40:17.116994
+Total games so far 0
+Won 37 / 64 games (0.578)
+Total games so far 720
+Won 27 / 64 games (0.422)
+Total games so far 1440
+Won 20 / 64 games (0.312)
+Total games so far 2160
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 19:49:05.486044
+Total games so far 0
+Won 33 / 64 games (0.516)
+Total games so far 720
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:04:25.451639
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:05:14.525500
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:07:08.265494
+Total games so far 0
+Won 29 / 64 games (0.453)
+Total games so far 720
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:28:31.494116
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:29:39.005558
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:34:47.438838
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:36:46.497166
+Total games so far 0
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:39:23.020313
+Total games so far 0
+Won 33 / 64 games (0.516)
+Total games so far 240
+----------------------
+Starting from chapter11/qagent7.hdf5 at 2024-04-02 20:47:59.824437
+Total games so far 0
+Won 29 / 64 games (0.453)
+Total games so far 480
+Won 36 / 64 games (0.562)
+Total games so far 960
+Won 34 / 64 games (0.531)
+Total games so far 1440
+Won 39 / 64 games (0.609)
+Total games so far 1920
+Won 54 / 64 games (0.844)
+New reference is chapter11/agent_00002400.hdf5
+New temperature is 0.490000
+Total games so far 2400
+Won 29 / 64 games (0.453)
+Total games so far 2880
+Won 52 / 64 games (0.812)
+New reference is chapter11/agent_00003360.hdf5
+New temperature is 0.480200
+Total games so far 3360
+Won 31 / 64 games (0.484)
+Total games so far 3840
+Won 31 / 64 games (0.484)
+Total games so far 4320
+Won 51 / 64 games (0.797)
+New reference is chapter11/agent_00004800.hdf5
+New temperature is 0.470596
+Total games so far 4800
+Won 32 / 64 games (0.500)
+Total games so far 5280
+Won 39 / 64 games (0.609)
+Total games so far 5760
+Won 40 / 64 games (0.625)
+New reference is chapter11/agent_00006240.hdf5
+New temperature is 0.461184
+Total games so far 6240
+Won 38 / 64 games (0.594)
+Total games so far 6720
+----------------------
+Starting from chapter11/qagent9.hdf5 at 2024-04-02 23:40:52.059901
+Total games so far 0
+Won 33 / 64 games (0.516)
+Total games so far 480
+Won 38 / 64 games (0.594)
+Total games so far 960
+Won 34 / 64 games (0.531)
+Total games so far 1440
+Won 32 / 64 games (0.500)
+Total games so far 1920
+Won 32 / 64 games (0.500)
+Total games so far 2400
+Won 44 / 64 games (0.688)
+New reference is chapter11/agent_00002880.hdf5
+New temperature is 0.490000
+Total games so far 2880
+Won 29 / 64 games (0.453)
+Total games so far 3360
+Won 36 / 64 games (0.562)
+Total games so far 3840
+Won 37 / 64 games (0.578)
+Total games so far 4320
+Won 42 / 64 games (0.656)
+New reference is chapter11/agent_00004800.hdf5
+New temperature is 0.480200
+Total games so far 4800
+Won 21 / 64 games (0.328)
+Total games so far 5280
+Won 33 / 64 games (0.516)
+Total games so far 5760
+Won 53 / 64 games (0.828)
+New reference is chapter11/agent_00006240.hdf5
+New temperature is 0.470596
+Total games so far 6240
+Won 32 / 64 games (0.500)
+Total games so far 6720
+Won 28 / 64 games (0.438)
+Total games so far 7200
+Won 32 / 64 games (0.500)
+Total games so far 7680
+Won 31 / 64 games (0.484)
+Total games so far 8160
+Won 39 / 64 games (0.609)
+Total games so far 8640
+Won 42 / 64 games (0.656)
+New reference is chapter11/agent_00009120.hdf5
+New temperature is 0.461184
+Total games so far 9120
+Won 37 / 64 games (0.578)
+Total games so far 9600
+Won 31 / 64 games (0.484)
+Total games so far 10080
+Won 32 / 64 games (0.500)
+Total games so far 10560
+Won 41 / 64 games (0.641)
+New reference is chapter11/agent_00011040.hdf5
+New temperature is 0.451960
+Total games so far 11040
+Won 33 / 64 games (0.516)
+Total games so far 11520
