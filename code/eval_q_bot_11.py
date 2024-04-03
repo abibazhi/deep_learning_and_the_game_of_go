@@ -85,7 +85,9 @@ def main():
     args = parser.parse_args()
 
     agent1 = load_agent(args.agent1)
+    agent1.set_temperature(0.5)
     agent2 = load_agent(args.agent2)
+    agent2.set_temperature(0.5)
 
     wins = 0
     losses = 0
