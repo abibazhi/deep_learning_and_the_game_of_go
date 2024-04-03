@@ -277,7 +277,7 @@ def main():
     parser.add_argument('--num-workers', '-w', type=int, default=1)
     parser.add_argument('--temperature', '-t', type=float, default=0.0)
     parser.add_argument('--board-size', '-b', type=int, default=13)
-    parser.add_argument('--lr', type=float, default=0.000001)
+    parser.add_argument('--lr', type=float, default=0.0000001)
     parser.add_argument('--bs', type=int, default=1024)
     parser.add_argument('--log-file', '-l')
 
