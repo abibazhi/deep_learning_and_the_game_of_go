@@ -38,6 +38,8 @@ class QAgent(Agent):
 
     def select_move(self, game_state):
         board_tensor = self.encoder.encode(game_state)
+        #print("bbbbbbbbbbbbb")
+        #print(board_tensor)
 
         # Loop over all legal moves.
         moves = []
@@ -51,10 +53,16 @@ class QAgent(Agent):
             return goboard.Move.pass_turn()
 
         num_moves = len(moves)
+        #print(f"棋局步数：{num_moves}")
         board_tensors = np.array(board_tensors)
+        #print(f"num_points是多少:{self.encoder.num_points()}")
         move_vectors = np.zeros((num_moves, self.encoder.num_points()))
+        #print(f"move_vectors.shape:{move_vectors.shape}")
         for i, move in enumerate(moves):
+            #print(f"i={i},move={move}")
             move_vectors[i][move] = 1
+            
+
 
         values = self.model.predict([board_tensors, move_vectors])
         values = values.reshape(len(moves))
@@ -113,10 +121,13 @@ class QAgent(Agent):
             actions[i][action] = 1
             y[i] = 1 if reward > 0 else 0
 
+        batch_size = int(n/480*6) + 1
+        print(f"总案例n={n},batch_size={batch_size},lr={lr}")
+        print("开始训练了....")
         self.model.fit(
             [experience.states, actions], y,
             batch_size=batch_size,
-            epochs=1)
+            epochs=10)
 
     def serialize(self, h5file):
         h5file.create_group('encoder')
@@ -137,6 +148,9 @@ def load_q_agent(h5file):
         encoder_name = encoder_name.decode('ascii')
     board_width = h5file['encoder'].attrs['board_width']
     board_height = h5file['encoder'].attrs['board_height']
+    #print("aaaaaaaaaaaaaaaa")
+    #print(f"encoder_name={encoder_name}")
+    #print(board_width,board_height)
     encoder = encoders.get_encoder_by_name(
         encoder_name,
         (board_width, board_height))
