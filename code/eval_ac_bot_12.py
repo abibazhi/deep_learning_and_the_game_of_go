@@ -81,7 +81,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--agent1', required=True)
     parser.add_argument('--agent2', required=True)
-    parser.add_argument('--num-games', '-n', type=int, default=64)
+    parser.add_argument('--num-games', '-n', type=int, default=640)
 
     args = parser.parse_args()
 

@@ -67,11 +67,20 @@ class GoDataProcessor:
         return tar_file
 
     def process_zip(self, zip_file_name, data_file_name, game_list):
-        tar_file = self.unzip_data(zip_file_name)
-        zip_file = tarfile.open(self.data_dir + '/' + tar_file)
-        name_list = zip_file.getnames()
+        try:
+            tar_file = self.unzip_data(zip_file_name)
+            zip_file = tarfile.open(self.data_dir + '/' + tar_file)
+            name_list = zip_file.getnames()
+            print(zip_file_name)
+        except (tarfile.TarError, IOError, FileNotFoundError, EOFError) as e:   
+            print(f"处理 {zip_file_name} 时遇到错误: {str(e)}") 
+            return
+        except MemoryError:
+            print("MemoryError")
+            print({zip_file_name})
+            return
+        
         total_examples = self.num_total_examples(zip_file, game_list, name_list)
-
         shape = self.encoder.shape()
         feature_shape = np.insert(shape, 0, np.asarray([total_examples]))
         features = np.zeros(feature_shape)
@@ -178,6 +187,8 @@ class GoDataProcessor:
         for zip_name in zip_names:
             base_name = zip_name.replace('.tar.gz', '')
             data_file_name = base_name + data_type
+            print("aaaaaaaaaaaaaaa")
+            print(data_file_name)
             if not os.path.isfile(self.data_dir + '/' + data_file_name):
                 zips_to_process.append((self.__class__, self.encoder_string, zip_name,
                                         data_file_name, indices_by_zip_name[zip_name]))

@@ -273,7 +273,7 @@ def main():
     parser.add_argument('--work-dir', '-d')
     parser.add_argument('--num-workers', '-w', type=int, default=4)
     parser.add_argument('--board-size', '-b', type=int, default=11)
-    parser.add_argument('--lr', type=float, default=0.0000000009)
+    parser.add_argument('--lr', type=float, default=0.0000001)
     parser.add_argument('--bs', type=int, default=512)
     parser.add_argument('--log-file', '-l')
 
