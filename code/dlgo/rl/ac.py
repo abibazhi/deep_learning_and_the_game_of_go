@@ -20,7 +20,10 @@ class ACAgent(Agent):
         self.model = model
         self.encoder = encoder
         self.collector = None
-        self.temperature = 1.0
+        self.temperature = 1 # 这个没有用，人家训练时设置的。
+        # temperature从1改为0.9，减少随机性。希望loss稳定。
+        # temperature从0.9改为0.8，继续减少随机性。希望loss更加稳定。
+        # 还是改回0.9吧。其实还是不清楚。
 
         self.last_state_value = 0
 
@@ -73,9 +76,13 @@ class ACAgent(Agent):
         opt = SGD(lr=lr, clipvalue=0.2)
         self.model.compile(
             optimizer=opt,
-            loss=['categorical_crossentropy', 'mse'])
+            loss=['categorical_crossentropy', 'mse'],loss_weights=[1, 0.25])
 
         n = experience.states.shape[0]
+        batch_size = int(n/120*10) + 1
+        print(f"batchsize={batch_size},lr={lr}")
+
+
         num_moves = self.encoder.num_points()
         policy_target = np.zeros((n, num_moves))
         value_target = np.zeros((n,))
@@ -85,11 +92,23 @@ class ACAgent(Agent):
             policy_target[i][action] = experience.advantages[i]
             value_target[i] = reward
 
-        self.model.fit(
+        history = self.model.fit(
             experience.states,
             [policy_target, value_target],
             batch_size=batch_size,
             epochs=1)
+
+        with open("chapter12/log.txt", 'a') as logf:
+            logf.write('---loss-------------------\n')
+            for epoch, loss in enumerate(history.history['loss']):
+                log_entry = f"Epoch {epoch + 1}: Loss = {loss}\n"
+                logf.write(log_entry)
+                print(log_entry)
+            
+            for key, value in history.history.items():
+                print(f"{key}: {value}")
+                logf.write(f"{key}: {value}")
+
 
     def serialize(self, h5file):
         h5file.create_group('encoder')
