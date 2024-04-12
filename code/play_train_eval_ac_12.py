@@ -343,6 +343,11 @@ def main():
             shutil.move(tmp_agent, next_filename)
             reference_agent = next_filename
             logf.write('New reference is %s\n' % next_filename)
+            
+            # 统计数据清零。重新初始化。
+            his_wons = []
+            avg_move_wons = 32
+
         else:
             print('Keep learning\n')
         logf.flush()
