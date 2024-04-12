@@ -296,7 +296,7 @@ def main():
     total_games = 0
 
     #his_wons = np.array([])
-    his_wons = []
+    his_wons = [32] # 开始是空数据太好。如果第一个合格的是35。有点大。所以加个32。这样只要33就可以合格，门槛第一点。
     avg_move_wons = 32 #初始化平均值，只有大于这个平均值的，才才采纳为继续训练。
     #avg_wons = np.mean(his_wons) #这是算法，实际等有了数据再算
 
@@ -329,7 +329,7 @@ def main():
             # 只有大于过去的平均成绩，才能有效升级
             # 但也不能大太多，太多是随机过头了。可能。需要抑制随机性。
             his_wons.append(wins)
-            avg_move_wons = int(sum(his_wons) / len(his_wons))
+            avg_move_wons = sum(his_wons) / len(his_wons)
             print(f"当前平均胜局数为{avg_move_wons}")
             logf.write(f"当前平均胜局数为{avg_move_wons}")
 
@@ -345,7 +345,7 @@ def main():
             logf.write('New reference is %s\n' % next_filename)
             
             # 统计数据清零。重新初始化。
-            his_wons = []
+            his_wons = [32]
             avg_move_wons = 32
 
         else:
