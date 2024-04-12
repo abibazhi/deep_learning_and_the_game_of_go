@@ -1,3 +1,8 @@
+# dlgo
+code/data/
+code/checkpoints/
+code/checkpointsold/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
