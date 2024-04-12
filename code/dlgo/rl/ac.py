@@ -98,7 +98,7 @@ class ACAgent(Agent):
             batch_size=batch_size,
             epochs=1)
 
-        with open("chapter12/log.txt", 'a') as logf:
+        with open("chapter12/log50.txt", 'a') as logf:
             logf.write('---loss-------------------\n')
             for epoch, loss in enumerate(history.history['loss']):
                 log_entry = f"Epoch {epoch + 1}: Loss = {loss}\n"
