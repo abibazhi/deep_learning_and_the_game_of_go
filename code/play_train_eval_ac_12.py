@@ -273,7 +273,7 @@ def main():
     parser.add_argument('--work-dir', '-d')
     parser.add_argument('--num-workers', '-w', type=int, default=4)
     parser.add_argument('--board-size', '-b', type=int, default=11)
-    parser.add_argument('--lr', type=float, default=0.0000000009)
+    parser.add_argument('--lr', type=float, default=0.000001)
     parser.add_argument('--bs', type=int, default=512)
     parser.add_argument('--log-file', '-l')
 
@@ -290,10 +290,17 @@ def main():
 
     learning_agent = args.agent
     reference_agent = args.agent
-    experience_file = os.path.join(args.work_dir, 'exp_temp.hdf5')
-    tmp_agent = os.path.join(args.work_dir, 'agent_temp.hdf5')
-    working_agent = os.path.join(args.work_dir, 'agent_cur.hdf5')
+    experience_file = os.path.join(args.work_dir, 'exp_temp50.hdf5')
+    tmp_agent = os.path.join(args.work_dir, 'agent_temp50.hdf5')
+    working_agent = os.path.join(args.work_dir, 'agent_cur50.hdf5')
     total_games = 0
+
+    #his_wons = np.array([])
+    his_wons = []
+    avg_move_wons = 32 #初始化平均值，只有大于这个平均值的，才才采纳为继续训练。
+    #avg_wons = np.mean(his_wons) #这是算法，实际等有了数据再算
+
+
     while True:
         print('Reference: %s' % (reference_agent,))
         logf.write('Total games so far %d\n' % (total_games,))
@@ -317,11 +324,22 @@ def main():
         logf.write('Won %d / 64 games (%.3f)\n' % (
             wins, float(wins) / 64.0))
         shutil.copy(tmp_agent, working_agent)
-        learning_agent = working_agent
+
+        if wins >= avg_move_wons and wins <= (avg_move_wons + 3):
+            # 只有大于过去的平均成绩，才能有效升级
+            # 但也不能大太多，太多是随机过头了。可能。需要抑制随机性。
+            his_wons.append(wins)
+            avg_move_wons = int(sum(his_wons) / len(his_wons))
+            print(f"当前平均胜局数为{avg_move_wons}")
+            logf.write(f"当前平均胜局数为{avg_move_wons}")
+
+            learning_agent = working_agent
+            logf.write("升级！...")
+            #print("升级！。。。")
         if wins >= 42:
             next_filename = os.path.join(
                 args.work_dir,
-                'agent_%08d.hdf5' % (total_games,))
+                'agent50_%08d.hdf5' % (total_games,))
             shutil.move(tmp_agent, next_filename)
             reference_agent = next_filename
             logf.write('New reference is %s\n' % next_filename)
