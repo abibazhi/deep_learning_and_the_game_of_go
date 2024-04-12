@@ -79,7 +79,7 @@ class ACAgent(Agent):
             loss=['categorical_crossentropy', 'mse'],loss_weights=[1, 0.25])
 
         n = experience.states.shape[0]
-        batch_size = int(n/120*10) + 1
+        batch_size = int(n/160*10) + 1
         print(f"batchsize={batch_size},lr={lr}")
 
 
