@@ -1,0 +1,1000 @@
+  169  2024-03-20 19:48:38 jm pip install --upgrade keras -i https://mirrors.aliyun.com/pypi/simple
+  170  2024-03-20 19:52:52 jm pip install keras==2.13.1 -i https://mirrors.aliyun.com/pypi/simple
+  171  2024-03-20 21:59:36 jm pyenv activate dlgo36
+  172  2024-03-20 21:59:43 jm cd go/code/
+  173  2024-03-20 21:59:46 jm python demo3_continue.py 
+  174  2024-03-21 02:28:13 jm ls
+  175  2024-03-21 02:28:19 jm ls cks
+  176  2024-03-21 02:28:29 jm ls cps
+  177  2024-03-21 02:28:45 jm vim demo3_continue.py 
+  178  2024-03-21 02:30:16 jm python demo3_continue.py 
+  179  2024-03-21 02:31:14 jm vim demo3_continue.py 
+  180  2024-03-21 02:31:38 jm ls cks
+  181  2024-03-21 02:32:10 jm vim demo3_continue.py 
+  182  2024-03-21 02:36:28 jm rm cks/*
+  183  2024-03-21 02:36:57 jm python demo3.py 
+  184  2024-03-21 06:53:02 jm python demo3_continue.py 
+  185  2024-03-21 08:51:38 jm screen -S dlgo
+  186  2024-03-21 08:52:31 jm screen -r
+  187  2024-03-21 08:52:36 jm exit
+  188  2024-03-21 10:14:42 jm screen -r
+  189  2024-03-21 10:24:19 jm ls
+  190  2024-03-21 10:24:28 jm cd go/data
+  191  2024-03-21 10:24:31 jm cd go/code
+  192  2024-03-21 10:24:32 jm ls
+  193  2024-03-21 10:24:46 jm cd checkpoints/
+  194  2024-03-21 10:24:47 jm ls
+  195  2024-03-21 10:24:56 jm cd ..
+  196  2024-03-21 10:24:58 jm cd cks
+  197  2024-03-21 10:24:59 jm ls
+  198  2024-03-21 10:25:03 jm cd .
+  199  2024-03-21 10:25:06 jm cd ..
+  200  2024-03-21 10:25:10 jm screen -r
+  201  2024-03-21 10:25:22 jm ls
+  202  2024-03-21 10:25:26 jm cd checkpoints/
+  203  2024-03-21 10:25:27 jm ls
+  204  2024-03-21 10:25:30 jm rm *
+  205  2024-03-21 10:25:32 jm df
+  206  2024-03-21 10:26:13 jm screen -r
+  207  2024-03-21 15:34:16 jm exit
+  208  2024-03-21 17:09:27 jm screen -r
+  209  2024-03-21 17:13:49 jm exit
+  210  2024-03-21 17:14:31 jm screen -r
+  211  2024-03-21 17:14:45 jm exit
+  212  2024-03-21 19:01:49 jm screen -r
+  213  2024-03-21 20:29:59 jm pyenv versions
+  214  2024-03-21 20:30:14 jm pyenv activate dlgo36
+  215  2024-03-21 20:30:51 jm cd go
+  216  2024-03-21 20:30:52 jm cd code
+  217  2024-03-21 20:30:53 jm ls
+  218  2024-03-21 20:31:01 jm git status
+  219  2024-03-21 20:31:16 jm git checkout master
+  220  2024-03-21 20:31:26 jm ls
+  221  2024-03-21 20:32:52 jm vim demo82.py
+  222  2024-03-21 20:33:58 jm vim -r demo82.py
+  223  2024-03-21 20:34:34 jm rm .demo82.py.swp 
+  224  2024-03-21 20:34:37 jm vim demo82.py
+  225  2024-03-21 20:37:57 jm screen 
+  226  2024-03-22 06:36:46 jm screen -r
+  227  2024-03-22 06:37:31 jm screen -r 31428.dlgo
+  228  2024-03-22 09:10:18 jm screen -r
+  229  2024-03-22 09:10:29 jm screen -r 31428
+  230  2024-03-21 20:38:01 jm ls
+  231  2024-03-21 20:38:13 jm python demo82.py 
+  232  2024-03-21 20:40:00 jm vim demo82.py 
+  233  2024-03-21 20:40:55 jm ls
+  234  2024-03-21 20:40:58 jm cd dlgo
+  235  2024-03-21 20:40:59 jm ls
+  236  2024-03-21 20:41:47 jm cat train.py
+  237  2024-03-21 20:41:57 jm cat train_pg.py
+  238  2024-03-21 20:42:03 jm ls
+  239  2024-03-21 20:42:24 jm cd ..
+  240  2024-03-21 20:42:25 jm ls
+  241  2024-03-21 20:42:35 jm cat train_pg.py 
+  242  2024-03-21 20:42:45 jm cat train.py 
+  243  2024-03-21 20:42:55 jm ls
+  244  2024-03-21 20:43:36 jm vim demo82.py 
+  245  2024-03-21 20:43:48 jm ls agents/
+  246  2024-03-21 20:43:58 jm vim demo82.py 
+  247  2024-03-21 20:44:52 jm python demo82.py 
+  248  2024-03-21 20:45:18 jm vim demo82.py 
+  249  2024-03-21 20:46:07 jm python demo82.py 
+  250  2024-03-21 20:46:52 jm pip list
+  251  2024-03-21 20:47:03 jm python demo82.py 
+  252  2024-03-21 20:48:45 jm vim demo82.py 
+  253  2024-03-21 20:49:20 jm python demo82.py 
+  254  2024-03-21 20:49:26 jm vim demo82.py 
+  255  2024-03-22 09:42:08 jm exit
+  256  2024-03-21 08:51:44 jm pyenv versions
+  257  2024-03-21 08:52:07 jm python demo3_continue.py 
+  258  2024-03-21 10:15:09 jm vim demo3_continue.py 
+  259  2024-03-21 10:15:50 jm python demo3_continue.py 
+  260  2024-03-21 18:24:10 jm pip install --upgrade keras -i https://mirrors.aliyun.com/pypi/simple
+  261  2024-03-21 19:02:17 jm df
+  262  2024-03-21 19:04:05 jm git status
+  263  2024-03-21 19:04:24 jm cd cks
+  264  2024-03-21 19:04:26 jm ls
+  265  2024-03-21 19:04:38 jm ls -al
+  266  2024-03-21 19:05:15 jm ls large_model_epoch_??.h5
+  267  2024-03-21 19:05:25 jm ls large_model_epoch_?.h5
+  268  2024-03-21 19:05:36 jm ls large_model_epoch_???.h5
+  269  2024-03-21 19:05:48 jm rm large_model_epoch_??.h5
+  270  2024-03-21 19:05:55 jm rm large_model_epoch_?.h5
+  271  2024-03-21 19:05:58 jm ls
+  272  2024-03-21 19:11:14 jm ls -lt | tail -n 10
+  273  2024-03-21 19:11:38 jm ls -lv | tail -n 10
+  274  2024-03-21 19:15:43 jm ls -lt | tail -n 10 | awk '{print $9}' 
+  275  2024-03-21 19:16:03 jm ls -lv| tail -n 10 | awk '{print $9}' 
+  276  2024-03-21 19:16:57 jm mkdir -p ~/abc
+  277  2024-03-21 19:17:38 jm ls -lv| tail -n 10 | awk '{print $9}' |xargs -I{} mv {} ~/abc/
+  278  2024-03-21 19:17:44 jm ls ~/abc
+  279  2024-03-21 19:17:55 jm ls
+  280  2024-03-21 19:17:58 jm rm *
+  281  2024-03-21 19:18:09 jm cp ~/abc/* ./
+  282  2024-03-21 19:18:11 jm ls
+  283  2024-03-21 19:18:16 jm du -sh
+  284  2024-03-21 19:18:24 jm ll
+  285  2024-03-21 19:18:50 jm rm large_model_epoch_163.h5
+  286  2024-03-21 19:18:54 jm rm large_model_epoch_165.h5
+  287  2024-03-21 19:19:06 jm rm large_model_epoch_166.h5
+  288  2024-03-21 19:19:08 jm ls
+  289  2024-03-21 19:19:16 jm rm large_model_epoch_165.h5
+  290  2024-03-21 19:19:21 jm rm large_model_epoch_167.h5
+  291  2024-03-21 19:19:23 jm ls
+  292  2024-03-21 19:19:34 jm rm large_model_epoch_168.h5
+  293  2024-03-21 19:19:39 jm rm large_model_epoch_169.h5
+  294  2024-03-21 19:19:41 jm ls
+  295  2024-03-21 19:19:50 jm git status
+  296  2024-03-21 19:20:14 jm cd ..
+  297  2024-03-21 19:20:15 jm ls
+  298  2024-03-21 19:20:21 jm git status
+  299  2024-03-21 19:20:41 jm git add cks
+  300  2024-03-21 19:20:53 jm git add data
+  301  2024-03-21 19:21:09 jm git status
+  302  2024-03-21 19:21:19 jm cd data
+  303  2024-03-21 19:21:21 jm du -sh
+  304  2024-03-21 19:22:20 jm git status
+  305  2024-03-21 19:22:30 jm cd ..
+  306  2024-03-21 19:22:38 jm git add kgs_index.html 
+  307  2024-03-21 19:22:47 jm git add test_samples.py 
+  308  2024-03-21 19:22:59 jm vim test_samples.py 
+  309  2024-03-21 19:23:05 jm ls
+  310  2024-03-21 19:23:09 jm git stauts
+  311  2024-03-21 19:23:15 jm git status
+  312  2024-03-21 19:23:49 jm git commit -am "verify72 stage1"
+  313  2024-03-21 19:24:08 jm git push origin verify72 
+  314  2024-03-21 19:36:50 jm git checkout master
+  315  2024-03-21 19:37:17 jm git pull origin main 
+  316  2024-03-21 19:37:28 jm git pull origin master 
+  317  2024-03-21 19:37:48 jm git checkout -b verify82
+  318  2024-03-21 19:47:03 jm ls
+  319  2024-03-21 19:47:47 jm grep SevenPlaneEncoder *.py
+  320  2024-03-21 19:47:58 jm grep OnePlaneEncoder *.py
+  321  2024-03-21 19:48:23 jm grep SevenPlaneEncoder *.py -r
+  322  2024-03-21 19:48:37 jm vim demo82.py
+  323  2024-03-22 06:38:25 jm pip list
+  324  2024-03-22 06:39:07 jm pyenv versions
+  325  2024-03-22 06:39:46 jm python demo82.py 
+  326  2024-03-22 06:41:36 jm pip list
+  327  2024-03-22 06:43:58 jm pip install keras==2.1.6
+  328  2024-03-22 06:44:08 jm python demo82.py 
+  329  2024-03-22 06:44:23 jm pip install flask
+  330  2024-03-22 06:44:30 jm python demo82.py 
+  331  2024-03-22 06:44:49 jm cat demo82.py 
+  332  2024-03-22 06:46:17 jm vim demo82.py
+  333  2024-03-22 06:47:13 jm python demo82.py 
+  334  2024-03-22 06:47:21 jm vim demo82.py
+  335  2024-03-22 06:47:40 jm python demo82.py 
+  336  2024-03-22 09:42:40 jm exit
+  337  2024-03-22 09:41:40 jm screen -ls
+  338  2024-03-22 09:41:52 jm screen -r 7679.pts-2.hcss-ecs-398b 
+  339  2024-03-22 09:42:13 jm screen -ls
+  340  2024-03-22 09:42:19 jm screen -r 31428.dlgo
+  341  2024-03-22 09:42:28 jm screen -d -r 31428.dlgo
+  342  2024-03-22 09:42:54 jm pyenv versions
+  343  2024-03-22 09:43:03 jm pyenv activate dlgo36
+  344  2024-03-22 09:43:05 jm ls
+  345  2024-03-22 09:43:08 jm exit
+  346  2024-03-22 09:44:27 jm pyenv activate dlgo36
+  347  2024-03-22 09:44:28 jm ls
+  348  2024-03-22 09:44:31 jm cd go
+  349  2024-03-22 09:44:32 jm ls
+  350  2024-03-22 09:44:34 jm cd code
+  351  2024-03-22 09:44:34 jm ls
+  352  2024-03-22 09:44:42 jm python demo82.py 
+  353  2024-03-22 09:45:15 jm exit
+  354  2024-03-22 09:20:43 jm echo $STY
+  355  2024-03-22 09:20:49 jm screen -ls
+  356  2024-03-22 09:21:08 jm screen -r 31428.dlgo
+  357  2024-03-22 09:21:26 jm screen -d -r 31428.dlgo
+  358  2024-03-22 09:44:14 jm screen -S dlgo
+  359  2024-03-22 09:45:26 jm pyenv activate dlgo36
+  360  2024-03-22 09:45:30 jm cd go/code
+  361  2024-03-22 09:45:36 jm python demo82.py 
+  362  2024-03-22 09:48:38 jm ls
+  363  2024-03-22 09:48:40 jm cd data
+  364  2024-03-22 09:48:41 jm ls
+  365  2024-03-22 09:48:46 jm cd ..
+  366  2024-03-22 09:49:10 jm cd data
+  367  2024-03-22 09:49:12 jm r  
+  368  2024-03-22 09:49:19 jm rm KGS-2001-19-2298-.tar.gz
+  369  2024-03-22 09:49:21 jm cd ..
+  370  2024-03-22 09:49:26 jm python demo82.py 
+  371  2024-03-22 09:55:23 jm ls -l
+  372  2024-03-22 09:55:31 jm screen -ls
+  373  2024-03-22 11:29:09 jm exit
+  374  2024-03-22 11:16:56 jm cd data
+  375  2024-03-22 11:17:04 jm ls KGS-2011-19-19099-.tar.gz
+  376  2024-03-22 11:17:10 jm rm KGS-2011-19-19099-.tar.gz
+  377  2024-03-22 11:46:25 jm sftp KGSjm@1.92.107.137
+  378  2024-03-22 11:46:44 jm sftpjm@1.92.107.137
+  379  2024-03-22 11:46:49 jm sftp jm@1.92.107.137
+  380  2024-03-22 11:48:13 jm ls KGS-2004-19-12106-.tar.gz
+  381  2024-03-22 11:48:49 jm sftp jm@1.92.107.137
+  382  2024-03-22 12:23:59 jm ls
+  383  2024-03-22 12:24:06 jm git status
+  384  2024-03-22 12:24:11 jm cd ..
+  385  2024-03-22 12:24:13 jm ls
+  386  2024-03-22 12:24:39 jm ssh jm@1.92.107.137
+  387  2024-03-22 09:57:34 jm pyenv activate dlgo36
+  388  2024-03-22 09:57:41 jm ls
+  389  2024-03-22 09:57:53 jm git status
+  390  2024-03-22 09:58:07 jm python demo82.py 
+  391  2024-03-22 09:59:18 jm vim /home/jm/go/code/dlgo/data/parallel_processor.py
+  392  2024-03-22 10:02:14 jm git status
+  393  2024-03-22 10:02:36 jm git checkout -b verify82
+  394  2024-03-22 10:02:45 jm git checkout verify82
+  395  2024-03-22 10:02:49 jm git status
+  396  2024-03-22 10:11:34 jm git add demo82.py
+  397  2024-03-22 10:11:55 jm git commit -am "verify82 commit first time"
+  398  2024-03-22 10:19:45 jm python demo82.py 
+  399  2024-03-22 11:10:39 jm ls
+  400  2024-03-22 11:10:54 jm cd ..
+  401  2024-03-22 11:10:55 jm ls
+  402  2024-03-22 11:10:59 jm cd code
+  403  2024-03-22 11:11:00 jm ls
+  404  2024-03-22 11:11:06 jm cat setup.py 
+  405  2024-03-22 11:13:36 jm pip list
+  406  2024-03-22 11:14:18 jm pip install h5py==2.6.0
+  407  2024-03-22 11:15:26 jm history|grep aliyun
+  408  2024-03-22 11:15:57 jm pip install h5py==2.6.0 -i https://mirrors.aliyun.com/pypi/simple
+  409  2024-03-22 11:16:10 jm python demo82.py 
+  410  2024-03-22 11:20:42 jm vim demo82.py 
+  411  2024-03-22 11:20:57 jm python demo82.py 
+  412  2024-03-22 11:26:57 jm git checkout verify72
+  413  2024-03-22 11:29:35 jm jm@1.92.107.137
+  414  2024-03-22 11:29:43 jm sftp jm@1.92.107.137
+  415  2024-03-22 11:31:33 jm ls
+  416  2024-03-22 11:31:43 jm mv KGS-2011-19-19099-.tar.gz data
+  417  2024-03-22 11:31:50 jm python demo82.py 
+  418  2024-03-22 12:36:21 jm ls agent
+  419  2024-03-22 12:36:24 jm ls agents
+  420  2024-03-22 12:36:29 jm ls agents -l
+  421  2024-03-22 12:48:12 jm python demo82.server.py 
+  422  2024-03-22 13:27:01 jm python demo82.py 
+  423  2024-03-22 14:24:31 jm pip list
+  424  2024-03-22 14:24:48 jm pip install h5py --upgrade
+  425  2024-03-22 14:29:09 jm history|grep ali
+  426  2024-03-22 14:29:27 jm pip install h5py --upgrade -i https://mirrors.aliyun.com/pypi/simple
+  427  2024-03-22 14:29:41 jm python demo82.py 
+  428  2024-03-22 14:37:46 jm ls agents/
+  429  2024-03-22 14:37:49 jm ls agents/ -al
+  430  2024-03-22 14:38:06 jm python demo82.server.py 
+  431  2024-03-22 14:39:08 jm vim /home/jm/.pyenv/versions/dlgo36/lib/python3.6/site-packages/keras/models.py
+  432  2024-03-22 14:40:52 jm python demo82.server.py 
+  433  2024-03-22 16:15:59 jm git status
+  434  2024-03-22 16:16:09 jm cd ..
+  435  2024-03-22 16:16:19 jm vim .gitignore 
+  436  2024-03-22 16:26:22 jm git status
+  437  2024-03-22 16:26:33 jm vim .gitignore 
+  438  2024-03-22 16:28:00 jm git status
+  439  2024-03-22 16:28:27 jm git add code/agents/
+  440  2024-03-22 16:28:44 jm git add code/demo82.server.py 
+  441  2024-03-22 16:28:54 jm cd code
+  442  2024-03-22 16:29:22 jm git commit -am "8.2 verified"
+  443  2024-03-22 16:29:33 jm git push origin verify82
+  444  2024-03-22 16:46:03 jm git checkout verify72
+  445  2024-03-22 16:46:52 jm mv kgs_index.html /tmp
+  446  2024-03-22 16:46:59 jm mv test_samples.py /tmp
+  447  2024-03-22 16:47:02 jm git checkout verify72
+  448  2024-03-22 16:49:14 jm git checkout -b verify73
+  449  2024-03-22 16:52:29 jm vim demo73.py
+  450  2024-03-22 16:53:21 jm vim demo73.server.py
+  451  2024-03-22 16:53:52 jm python demo73.py 
+  452  2024-03-22 17:07:21 jm python demo73.server.py 
+  453  2024-03-22 18:22:41 jm python demo3
+  454  2024-03-22 18:22:44 jm python demo3.py
+  455  2024-03-22 18:23:58 jm vim demo3.py
+  456  2024-03-22 18:24:21 jm ls
+  457  2024-03-22 18:24:24 jm cd cks
+  458  2024-03-22 18:24:24 jm ls
+  459  2024-03-22 18:24:37 jm rm *17*
+  460  2024-03-22 18:24:38 jm ls
+  461  2024-03-22 18:24:44 jm cd ..
+  462  2024-03-22 18:24:50 jm vim demo3_continue.py 
+  463  2024-03-22 18:25:39 jm pythonm demo3_continue.py 
+  464  2024-03-22 18:25:45 jm python demo3_continue.py 
+  465  2024-03-22 18:45:55 jm vim demo3.py
+  466  2024-03-22 18:46:03 jm python demo3.py
+  467  2024-03-22 19:25:25 jm ls cks
+  468  2024-03-22 19:26:26 jm ls
+  469  2024-03-22 19:27:24 jm ls cks
+  470  2024-03-22 19:28:21 jm python demo73.server.py 
+  471  2024-03-23 06:44:36 jm free
+  472  2024-03-23 06:44:44 jm python demo73.server.py 
+  473  2024-03-23 10:42:41 jm cd /etc
+  474  2024-03-23 10:42:45 jm uname -r
+  475  2024-03-23 10:43:49 jm ldd -version
+  476  2024-03-23 10:43:52 jm ldd --version
+  477  2024-03-23 10:48:29 jm python demo73.server.py 
+  478  2024-03-23 10:49:03 jm cd ~/go/code
+  479  2024-03-23 10:49:04 jm python demo73.server.py 
+  480  2024-03-22 10:41:54 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  481  2024-03-22 19:30:27 jm ls
+  482  2024-03-22 19:31:24 jm python demo3_continue.py 
+  483  2024-03-23 04:33:56 jm ls
+  484  2024-03-23 04:34:02 jm ls cks
+  485  2024-03-23 04:34:25 jm ls -al
+  486  2024-03-23 04:34:31 jm ls cks -al
+  487  2024-03-23 04:35:34 jm free
+  488  2024-03-23 04:36:50 jm python demo3_continue.py 
+  489  2024-03-23 04:37:15 jm free
+  490  2024-03-23 04:37:49 jm pyvim o3_continue.py 
+  491  2024-03-23 04:38:01 jm vim demo3_continue.py 
+  492  2024-03-23 04:39:10 jm python demo3_continue.py 
+  493  2024-03-23 13:19:16 jm free
+  494  2024-03-23 13:19:43 jm cd ~
+  495  2024-03-23 13:19:45 jm ls
+  496  2024-03-23 13:19:51 jm cd go/code
+  497  2024-03-23 13:19:52 jm ls
+  498  2024-03-23 13:20:11 jm python demo3_continue.py 
+  499  2024-03-23 13:22:21 jm sudo reboot
+  500  2024-03-23 13:24:31 jm free
+  501  2024-03-23 13:24:34 jm python demo3_continue.py 
+  502  2024-03-23 13:30:13 jm pyevn --version
+  503  2024-03-23 13:30:27 jm pyenv --versions
+  504  2024-03-23 13:30:35 jm pyenv versions
+  505  2024-03-23 13:30:54 jm python -V
+  506  2024-03-23 13:31:05 jm pyevn deactivate
+  507  2024-03-23 13:31:11 jm pyenv deactivate
+  508  2024-03-23 13:31:20 jm pyenv activate dlgo36
+  509  2024-03-23 13:33:01 jm exit
+  510  2024-03-23 13:33:05 jm ls
+  511  2024-03-23 13:33:10 jm python demo3_continue.py 
+  512  2024-03-23 13:24:23 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  513  2024-03-23 13:23:37 jm free
+  514  2024-03-23 19:38:15 jm python demo825.py 
+  515  2024-03-23 19:41:46 jm sudo apt install pachi
+  516  2024-03-23 19:42:07 jm sudo apt install gnugo
+  517  2024-03-23 19:42:14 jm python demo825.py 
+  518  2024-03-23 19:56:34 jm pyenv activate dlgo36
+  519  2024-03-23 19:56:38 jm ls
+  520  2024-03-23 19:56:40 jm cd go
+  521  2024-03-23 19:56:45 jm cd code
+  522  2024-03-23 19:56:51 jm python demo825.py 
+  523  2024-03-24 09:27:42 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  524  2024-03-23 20:00:31 jm /home/jm/.pyenv/versions/3.6.6/envs/dlgo36/bin/python /home/jm/go/code/demo825.py
+  525  2024-03-23 20:02:35 jm python demo825.py 
+  526  2024-03-23 20:10:46 jm gnu go --help
+  527  2024-03-23 20:10:49 jm gnugo --help
+  528  2024-03-23 20:16:02 jm python demo825.py 
+  529  2024-03-23 20:16:43 jm gnu --mode gtp
+  530  2024-03-23 20:16:49 jm gnugo --mode gtp
+  531  2024-03-23 20:21:18 jm python demo825.py 
+  532  2024-03-23 20:30:36 jm python gnugotest.py 
+  533  2024-03-23 20:39:21 jm python gnugotest2.py 
+  534  2024-03-23 20:39:33 jm python gungotest2.py 
+  535  2024-03-23 20:41:02 jm python gnugotest2.py 
+  536  2024-03-23 20:54:05 jm gnu --help
+  537  2024-03-23 20:54:12 jm gnugo --help
+  538  2024-03-23 20:59:39 jm python gnugotest3.py 
+  539  2024-03-23 21:04:26 jm python gnugotest4.py 
+  540  2024-03-23 21:09:29 jm python gnugotest2.py 
+  541  2024-03-23 21:19:07 jm gnugo --mode=gtp
+  542  2024-03-23 19:55:14 jm gnugo
+  543  2024-03-23 19:55:51 jm python demo825.py 
+  544  2024-03-23 20:07:45 jm ps -ef|grep gnu
+  545  2024-03-23 20:07:51 jm ps -ef|grep python
+  546  2024-03-25 06:28:35 jm ls cks
+  547  2024-03-25 06:29:42 jm python demo825.py 
+  548  2024-03-25 06:31:39 jm python demo73.server.py 
+  549  2024-03-23 14:17:27 jm ls
+  550  2024-03-23 14:17:31 jm python -V
+  551  2024-03-23 14:17:38 jm ls cks
+  552  2024-03-23 14:18:11 jm ls cks/large_model_epoch_28?
+  553  2024-03-23 14:18:22 jm ls cks/large_model_epoch_28?.*
+  554  2024-03-23 14:18:29 jm rm cks/large_model_epoch_28?.*
+  555  2024-03-23 14:18:37 jm rm cks/large_model_epoch_29?.*
+  556  2024-03-23 14:18:47 jm ls cks
+  557  2024-03-23 14:19:27 jm python demo3_continue.py 
+  558  2024-03-23 14:44:41 jm ls cks
+  559  2024-03-23 14:44:52 jm mkdir adam
+  560  2024-03-23 14:45:06 jm rmdir adam
+  561  2024-03-23 14:45:08 jm cd cks
+  562  2024-03-23 14:45:11 jm mkdir adam
+  563  2024-03-23 14:45:27 jm mv large_model_epoch_28?.* adam
+  564  2024-03-23 14:45:29 jm ls
+  565  2024-03-23 14:45:34 jm cd ..
+  566  2024-03-23 14:45:40 jm python demo3_continue.py 
+  567  2024-03-23 17:35:46 jm cd cks
+  568  2024-03-23 17:35:48 jm ls
+  569  2024-03-23 17:36:01 jm rm large_model_epoch_3??.h5
+  570  2024-03-23 17:36:15 jm rm large_model_epoch_29?.h5
+  571  2024-03-23 17:36:17 jm ls
+  572  2024-03-23 17:36:32 jm rm large_model_epoch_28?.h5
+  573  2024-03-23 17:36:34 jm ls
+  574  2024-03-23 17:36:41 jm cd ..
+  575  2024-03-23 17:36:48 jm python demo3_continue.py 
+  576  2024-03-24 02:41:02 jm ./cks/large_model_epoch_279.h5
+  577  2024-03-24 02:41:02 jm 2
+  578  2024-03-24 02:41:03 jm 3
+  579  2024-03-24 02:41:03 jm 4
+  580  2024-03-24 02:41:03 jm Epoch 281/471
+  581  2024-03-24 02:41:03 jm 88/88 [==============================] - 159s 2s/step - loss: 1.6352 - acc: 0.7876 - val_loss: 1.6221 - val_acc: 0.7900
+  582  2024-03-24 02:41:03 jm Epoch 282/471
+  583  2024-03-24 03:30:55 jm 88/88 [==============================] - 159s 2s/step - loss: 1.6211 - acc: 0.7895 - v
+  584  2024-03-24 03:31:01 jm ls chks
+  585  2024-03-24 03:31:06 jm ls cks
+  586  2024-03-24 03:33:06 jm python demo3_continue.py 
+  587  2024-03-25 14:41:46 jm cd cks
+  588  2024-03-25 14:41:47 jm ls
+  589  2024-03-25 14:42:21 jm rm  large_model_epoch_???.h5
+  590  2024-03-25 14:42:24 jm ls
+  591  2024-03-25 14:42:50 jm sudo rm adam -r
+  592  2024-03-25 14:42:57 jm ls
+  593  2024-03-26 15:50:02 jm git status
+  594  2024-03-26 15:50:32 jm cd ..
+  595  2024-03-26 15:50:46 jm vim .gitignore 
+  596  2024-03-26 15:51:55 jm git status
+  597  2024-03-26 15:52:59 jm :q
+  598  2024-03-26 15:53:11 jm vim .gitignore 
+  599  2024-03-26 15:53:34 jm git status
+  600  2024-03-26 15:53:41 jm vim .gitignore 
+  601  2024-03-26 15:53:54 jm git status
+  602  2024-03-26 15:58:02 jm git rm -r dlgo/code/data/
+  603  2024-03-26 15:58:09 jm git rm -r dlgo/code/data
+  604  2024-03-26 15:58:44 jm git rm -r dlgo/--cached dlgo/code/data
+  605  2024-03-26 15:59:00 jm git rm -r --cached dlgo/code/data/
+  606  2024-03-26 15:59:12 jm cd dlgo
+  607  2024-03-26 15:59:16 jm pwd
+  608  2024-03-26 15:59:36 jm git rm -r --cached /code/dlgo/data/
+  609  2024-03-26 16:00:00 jm ls
+  610  2024-03-26 16:00:14 jm cd code
+  611  2024-03-26 16:00:15 jm ls
+  612  2024-03-26 16:00:23 jm cd dlgo
+  613  2024-03-26 16:00:25 jm ls
+  614  2024-03-26 16:00:46 jm git rm -r --cached data/
+  615  2024-03-26 16:00:52 jm cd data
+  616  2024-03-26 16:00:53 jm ls
+  617  2024-03-26 16:01:31 jm git status
+  618  2024-03-26 16:03:02 jm git reset HEAD __init__.py generator.py index_processor.py parallel_processor.py processor.py sampling.py
+  619  2024-03-26 16:03:15 jm git stauts
+  620  2024-03-26 16:03:26 jm git status
+  621  2024-03-26 16:03:45 jm cd ..
+  622  2024-03-26 16:03:48 jm ls
+  623  2024-03-26 16:03:54 jm cd data
+  624  2024-03-26 16:03:55 jm ls
+  625  2024-03-26 16:04:08 jm git status
+  626  2024-03-26 16:08:13 jm cd ..
+  627  2024-03-26 16:08:22 jm git add .gitignore 
+  628  2024-03-26 16:08:25 jm git status
+  629  2024-03-26 16:12:27 jm gitg status
+  630  2024-03-26 16:13:10 jm itg status
+  631  2024-03-26 08:50:42 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  632  2024-03-27 16:50:13 jm ls init_agent.py 
+  633  2024-03-27 17:03:06 jm ls init*
+  634  2024-03-27 17:03:19 jm vim init_ac_agent.py 
+  635  2024-03-26 20:20:41 jm ls
+  636  2024-03-26 20:25:19 jm cat out.log
+  637  2024-03-26 20:25:40 jm ll
+  638  2024-03-26 20:26:20 jm cd agents
+  639  2024-03-26 20:26:21 jm ls
+  640  2024-03-26 20:26:25 jm cd ..
+  641  2024-03-26 20:26:26 jm ls
+  642  2024-03-26 20:26:27 jm cd gens
+  643  2024-03-26 20:26:28 jm ls
+  644  2024-03-26 20:26:34 jm cd ..
+  645  2024-03-26 20:26:36 jm ls
+  646  2024-03-26 20:26:41 jm cd /tmp
+  647  2024-03-26 20:26:42 jm ls
+  648  2024-03-26 20:26:52 jm ll -al
+  649  2024-03-26 20:27:10 jm cd ~
+  650  2024-03-26 20:27:14 jm cd go
+  651  2024-03-26 20:27:14 jm cd code
+  652  2024-03-26 20:27:15 jm ls
+  653  2024-03-26 20:30:10 jm vim out.log
+  654  2024-03-27 05:57:16 jm cd /tmp
+  655  2024-03-27 05:57:19 jm ls
+  656  2024-03-27 05:57:22 jm ll 
+  657  2024-03-27 05:57:47 jm rm dlgo*
+  658  2024-03-27 05:57:49 jm ls
+  659  2024-03-27 05:59:35 jm df
+  660  2024-03-26 16:14:25 jm git status
+  661  2024-03-26 16:14:47 jm git add agents/deep_bot.h5 
+  662  2024-03-26 16:15:01 jm git add data/train.npy 
+  663  2024-03-26 16:15:10 jm git add demo*
+  664  2024-03-26 16:15:22 jm git add gnugotes*
+  665  2024-03-26 16:15:31 jm ll
+  666  2024-03-26 16:15:49 jm git add status
+  667  2024-03-26 16:15:53 jm git  status
+  668  2024-03-26 16:16:17 jm ls
+  669  2024-03-26 16:16:42 jm git status
+  670  2024-03-26 16:19:31 jm git rm --cached cks/large_model_epoch_170.h5
+  671  2024-03-26 16:19:31 jm git rm --cached cks/large_model_epoch_171.h5
+  672  2024-03-26 16:19:34 jm git rm --cached cks/large_model_epoch_172.h5
+  673  2024-03-26 16:19:48 jm git status
+  674  2024-03-26 16:20:45 jm rm /home/jm/go/.git/index.lock
+  675  2024-03-26 16:20:56 jm git rm --cached cks/large_model_epoch_172.h5
+  676  2024-03-26 16:21:04 jm git status
+  677  2024-03-26 16:21:41 jm mv weights.01.hdf5 cks
+  678  2024-03-26 16:21:45 jm mv weights.02.hdf5 cks
+  679  2024-03-26 16:21:47 jm ls
+  680  2024-03-26 16:21:50 jm git staus
+  681  2024-03-26 16:21:53 jm git status
+  682  2024-03-26 16:31:07 jm git rm data/KGS*.npy
+  683  2024-03-26 16:31:12 jm git status
+  684  2024-03-26 16:31:30 jm git rm --cache data/KGS*.npy
+  685  2024-03-26 16:31:33 jm git status
+  686  2024-03-26 16:31:52 jm ls
+  687  2024-03-26 16:31:56 jm ls data
+  688  2024-03-26 16:32:07 jm cat train.npy
+  689  2024-03-26 16:32:12 jm cat data/train.npy
+  690  2024-03-26 16:47:35 jm git status
+  691  2024-03-26 16:48:05 jm cd ..
+  692  2024-03-26 16:48:18 jm vim .gitignore 
+  693  2024-03-26 16:48:27 jm pwd
+  694  2024-03-26 16:48:31 jm git status
+  695  2024-03-26 16:48:41 jm vim .gitignore 
+  696  2024-03-26 16:48:57 jm git status
+  697  2024-03-26 16:49:38 jm git commit -am "bye 73"
+  698  2024-03-26 16:50:00 jm cd code/data
+  699  2024-03-26 16:50:01 jm ls
+  700  2024-03-26 16:50:05 jm cd ..
+  701  2024-03-26 16:50:12 jm git checkout master
+  702  2024-03-26 16:50:23 jm git status
+  703  2024-03-26 16:51:04 jm vim .gitignore
+  704  2024-03-26 16:51:31 jm git status
+  705  2024-03-26 16:51:42 jm git add .gitignore 
+  706  2024-03-26 16:51:47 jm git status
+  707  2024-03-26 16:52:24 jm ls
+  708  2024-03-26 16:52:27 jm cd code
+  709  2024-03-26 16:52:28 jm ls
+  710  2024-03-26 16:54:55 jm python play_train_eval.py
+  711  2024-03-26 16:55:24 jm cd dlgo
+  712  2024-03-26 16:55:25 jm ls
+  713  2024-03-26 16:55:31 jm cd agent/
+  714  2024-03-26 16:55:32 jm ls
+  715  2024-03-26 16:55:38 jm vim base.py 
+  716  2024-03-26 16:58:33 jm vim pg.py
+  717  2024-03-26 17:25:22 jm git status
+  718  2024-03-26 17:25:27 jm cd ~
+  719  2024-03-26 17:25:46 jm git checkout -b verify93
+  720  2024-03-26 17:25:53 jm cd got
+  721  2024-03-26 17:25:57 jm cd go
+  722  2024-03-26 17:26:01 jm git checkout -b verify93
+  723  2024-03-26 17:26:10 jm git status
+  724  2024-03-26 17:26:30 jm git commit -am ".gitignore"
+  725  2024-03-26 17:26:36 jm git status
+  726  2024-03-26 17:26:42 jm cd code
+  727  2024-03-26 17:26:44 jm ls
+  728  2024-03-26 17:27:13 jm cp parallel_self_play.py demo93.py
+  729  2024-03-26 17:27:19 jm vim demo93.py 
+  730  2024-03-26 17:52:49 jm python demo93.py 
+  731  2024-03-26 18:15:48 jm python demo93.py --learning-agent=pagent -o=out1
+  732  2024-03-26 18:18:25 jm ls
+  733  2024-03-26 18:18:33 jm ls out*
+  734  2024-03-26 18:19:00 jm ls out* -al
+  735  2024-03-26 18:23:08 jm python demo93.py --learning-agent=pagent -o=out2.h5
+  736  2024-03-26 18:32:00 jm ll out* -al
+  737  2024-03-26 19:32:21 jm pwd
+  738  2024-03-26 19:32:38 jm ls
+  739  2024-03-26 19:56:09 jm python play_train_eval
+  740  2024-03-26 19:56:17 jm python play_train_eval.py
+  741  2024-03-26 19:56:41 jm python play_train_eval.py --agent=out2.h5
+  742  2024-03-26 19:57:34 jm python play_train_eval.py --agent=out2.h5 -l out.log
+  743  2024-03-26 19:58:25 jm mkdir gens
+  744  2024-03-26 19:58:52 jm python play_train_eval.py --agent=out2.h5 -l out.log -d gens
+  745  2024-03-26 20:11:25 jm python play_train_eval.py --agent=pagent -l out.log -d gens
+  746  2024-03-27 10:37:53 jm ls
+  747  2024-03-27 10:37:57 jm cd gens
+  748  2024-03-27 10:37:58 jm ls
+  749  2024-03-27 10:38:41 jm cd ..
+  750  2024-03-27 10:38:42 jm ls
+  751  2024-03-27 10:38:45 jm ls gens
+  752  2024-03-28 18:59:24 jm nodejs
+  753  2024-03-28 18:59:37 jm pyenv deactivate
+  754  2024-03-28 18:59:39 jm nodejs
+  755  2024-03-28 19:33:55 jm screen -S ptv93
+  756  2024-03-28 19:55:18 jm exit
+  757  2024-03-28 19:55:29 jm screen -r
+  758  2024-03-28 19:55:36 jm exit
+  759  2024-03-28 20:27:46 jm screen -r
+  760  2024-03-28 20:28:35 jm exit
+  761  2024-03-28 20:36:02 jm screen -r
+  762  2024-03-28 20:36:47 jm exit
+  763  2024-03-28 19:37:07 jm ls
+  764  2024-03-28 19:37:09 jm top
+  765  2024-03-28 19:38:34 jm TOP
+  766  2024-03-28 19:38:36 jm top
+  767  2024-03-28 18:59:59 jm python
+  768  2024-03-28 19:22:33 jm top
+  769  2024-03-28 10:22:06 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  770  2024-03-28 11:27:01 jm python init_agent_93.py pagent1.h5
+  771  2024-03-28 11:27:06 jm ls
+  772  2024-03-28 11:28:29 jm mkdir 93
+  773  2024-03-28 11:28:34 jm mv pagent1.h5 93
+  774  2024-03-28 11:29:09 jm mv 93 chapter9
+  775  2024-03-28 11:29:11 jm ls
+  776  2024-03-28 11:38:39 jm cp init_agent_93.py chapter9
+  777  2024-03-28 11:39:06 jm python chapter9/init_agent_93.py chapter9/pagent2.h5
+  778  2024-03-28 11:39:27 jm python ./chapter9/init_agent_93.py chapter9/pagent2.h5
+  779  2024-03-28 11:42:55 jm vim entry93.py
+  780  2024-03-28 11:43:16 jm cd chapter9
+  781  2024-03-28 11:43:49 jm touch __init__.py
+  782  2024-03-28 11:43:56 jm cd ..
+  783  2024-03-28 11:44:02 jm vim entry93.py
+  784  2024-03-28 11:44:43 jm ls chapter9
+  785  2024-03-28 11:55:10 jm history|grep demo93
+  786  2024-03-28 12:18:38 jm python demo93.py --learning-agent=pchapter9/pgent 1.h5 -o=out2.h5
+  787  2024-03-28 12:18:58 jm python demo93.py --learning-agent=pchapter9/pgent 1.h5 -o out2.h5
+  788  2024-03-28 12:19:13 jm python demo93.py --learning-agent=pchapter9/pgent1.h5 -o out2.h5
+  789  2024-03-28 12:19:49 jm python demo93.py --learning-aget=pchaptera9/pgent1.h5 -o out2.h5
+  790  2024-03-28 12:20:12 jm ls chapter9
+  791  2024-03-28 12:20:49 jm python demo93.py --learning-aget=pchaptera9/pgent1.h5 -o out2.h5
+  792  2024-03-28 12:21:16 jm python demo93.py --learning-agent=pchapter9/agent1.h5 -o out2.h5
+  793  2024-03-28 12:22:19 jm python demo93.py --learning-agent=chapter9/pagent1.h5 -o out2.h5
+  794  2024-03-28 12:26:29 jm ls
+  795  2024-03-28 12:26:36 jm ll out2.h5 -al
+  796  2024-03-28 14:37:55 jm mv out2.h5 chapter9
+  797  2024-03-28 14:51:08 jm ls chapter9/
+  798  2024-03-28 14:53:21 jm python train_pg--learning-agent= chapter9/pagent1.h5--agent-out=chapter9/pagent2.h5 chapter9/out2.h5 
+  799  2024-03-28 14:53:35 jm python train_pg --learning-agent= chapter9/pagent1.h5--agent-out=chapter9/pagent2.h5 chapter9/out2.h5 
+  800  2024-03-28 14:54:18 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5--agent-out=chapter9/pagent2.h5 chapter9/out2.h5 
+  801  2024-03-28 14:54:32 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 chapter9/out2.h5 
+  802  2024-03-28 14:55:29 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 experience chapter9/out2.h5 
+  803  2024-03-28 14:55:52 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 -experience chapter9/out2.h5 
+  804  2024-03-28 14:57:22 jm python train_pg_103.py chapter9/out2.h5 --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5   
+  805  2024-03-28 15:00:14 jm ls exper*
+  806  2024-03-28 15:01:14 jm mv chapter9/out2.h5 experience1.h5
+  807  2024-03-28 15:01:57 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 experience1.h5
+  808  2024-03-28 15:02:02 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 experience1
+  809  2024-03-28 15:02:21 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 experience experience1.h5 
+  810  2024-03-28 15:02:29 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 -experience experience1.h5 
+  811  2024-03-28 15:02:35 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 --experience experience1.h5 
+  812  2024-03-28 15:02:53 jm mv experience1.h5 experience1
+  813  2024-03-28 15:03:05 jm python train_pg_103.py --learning-agent= chapter9/pagent1.h5 --agent-out=chapter9/pagent2.h5 experience1
+  814  2024-03-28 15:06:15 jm python train_pg_103.py --learning-agent chapter9/pagent1.h5 --agent-o t=chapter9/pagent2.h5 --experience
+  815  2024-03-28 15:06:39 jm python train_pg_103.py --learning-agent chapter9/pagent1.h5 --agent-ouut chapter9/pagent2.h5 --experience
+  816  2024-03-28 15:06:47 jm python train_pg_103.py --learning-agent chapter9/pagent1.h5 --agent-out chapter9/pagent2.h5 --experience
+  817  2024-03-28 15:07:46 jm mv experience1 experience_value1 
+  818  2024-03-28 15:07:58 jm python train_pg_103.py --learning-agent chapter9/pagent1.h5 --agent-out chapter9/pagent2.h5 experien_value1
+  819  2024-03-28 15:08:25 jm python train_pg_103.py --learning-agent chapter9/pagent1.h5 --agent-out chapter9/pagent2.h5 experience_value1
+  820  2024-03-28 15:11:44 jm ls chapter9/
+  821  2024-03-28 15:11:48 jm ls chapter9/ -al
+  822  2024-03-28 16:29:22 jm python eval_pg_bot_103.py --agent1 chapter9/pagent1.h5 --agent2 chapter9/pagent2.h5 
+  823  2024-03-28 16:30:36 jm python eval_pg_bot_103.py --agent1 chapter9/pagent1.h2 --agent2 chapter9/pagent2.h5 
+  824  2024-03-28 16:30:50 jm python eval_pg_bot_103.py --agent1 chapter9/pagent2.h5 --agent2 chapter9/pagent2.h5 
+  825  2024-03-28 16:51:25 jm python eval_pg_bot_103.py --agent1 chapter9/pagent1.h5 --agent2 chapter9/pagent2.h5 
+  826  2024-03-28 16:56:15 jm git stauts
+  827  2024-03-28 16:56:23 jm git status
+  828  2024-03-28 18:44:49 jm python play_train_eval_103.py --agent chapter9/pagent2.h5 --work-dir chapter9
+  829  2024-03-28 18:45:59 jm python play_train_eval_103.py --agent chapter9/pagent2.h5 --work-dir chapter9 --log-file chapter9/log.txt
+  830  2024-03-28 19:01:46 jm ls chapter9
+  831  2024-03-28 19:02:06 jm ls chapter9 -al
+  832  2024-03-28 19:02:47 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt
+  833  2024-03-28 19:20:51 jm ls chapter9 -al
+  834  2024-03-28 19:21:40 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-worker4
+  835  2024-03-28 19:22:09 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4
+  836  2024-03-28 19:35:15 jm cat chapter9/log.txt 
+  837  2024-03-28 19:36:10 jm tail -f chapter9/log.txt 
+  838  2024-03-28 19:36:36 jm top
+  839  2024-03-28 19:46:40 jm ls chapter9/
+  840  2024-03-28 19:50:12 jm vim chapter9/log.txt 
+  841  2024-03-28 19:52:17 jm vim ctail -fter9/log.txt 
+  842  2024-03-28 19:52:36 jm vim c-fter9/ chaplog.txt 
+  843  2024-03-28 19:52:55 jm tail -f chapter9/log.txt 
+  844  2024-03-29 12:06:30 jm top
+  845  2024-03-29 12:21:53 jm cat /proc/cpuinfo
+  846  2024-03-29 12:24:42 jm top\
+  847  2024-03-29 12:25:32 jm top
+  848  2024-03-29 12:25:43 jm exit
+  849  2024-03-29 09:48:07 jm screen -r
+  850  2024-03-29 09:48:49 jm cd go
+  851  2024-03-29 09:48:52 jm cd code
+  852  2024-03-29 09:48:54 jm ls
+  853  2024-03-29 09:49:44 jm tail -f chapter9/log.txt 
+  854  2024-03-29 09:50:26 jm vim chapter9/log.txt 
+  855  2024-03-29 09:51:40 jm cd chapter9 
+  856  2024-03-29 09:51:41 jm ls
+  857  2024-03-29 09:52:31 jm du -sh
+  858  2024-03-29 09:52:34 jm df
+  859  2024-03-29 12:02:23 jm ls
+  860  2024-03-29 12:02:28 jm screen -r
+  861  2024-03-29 12:20:03 jm ls
+  862  2024-03-29 13:19:19 jm screen -r
+  863  2024-03-29 17:33:14 jm exit
+  864  2024-03-29 10:00:20 jm cd ..
+  865  2024-03-29 10:00:23 jm ls
+  866  2024-03-29 10:00:30 jm vim .gitignore
+  867  2024-03-29 10:00:33 jm ls
+  868  2024-03-29 10:00:38 jm ls .git*
+  869  2024-03-29 10:00:44 jm pwd
+  870  2024-03-29 10:00:46 jm cd go
+  871  2024-03-29 10:00:46 jm ls
+  872  2024-03-29 10:00:51 jm vim .gitignore 
+  873  2024-03-29 10:09:08 jm history|grep eval_pg
+  874  2024-03-29 10:09:36 jm git status
+  875  2024-03-29 10:10:00 jm ls -al out1
+  876  2024-03-29 10:10:07 jm ls -al code/out1
+  877  2024-03-29 10:10:19 jm rm code/out1
+  878  2024-03-29 10:10:24 jm ls
+  879  2024-03-29 10:10:55 jm git status
+  880  2024-03-29 10:11:35 jm ls code/experience_value1 
+  881  2024-03-29 10:11:39 jm ls code/experience_value1 -al
+  882  2024-03-29 10:13:00 jm history|grep experience
+  883  2024-03-29 10:15:18 jm history|grep eval
+  884  2024-03-29 10:29:09 jm python eval_pg_bot_103.py --agent1 chapter90000100.hdf505 --agent2 chapter00004040.hdf5
+  885  2024-03-29 10:29:44 jm cd code
+  886  2024-03-29 10:30:07 jm python eval_pg_bot_103.py --agent1 chapter9/0000100.hdf505 --agent2 chapte9/r00004040.hdf5
+  887  2024-03-29 10:30:24 jm python eval_pg_bot_103.py --agent1 chapter9/0000100.hdf505 --agent2 chapter9/00004040.hdf5
+  888  2024-03-29 10:30:35 jm python eval_pg_bot_103.py --agent1 chapter9/00001000.hdf505 --agent2 chapter9/00004040.hdf5
+  889  2024-03-29 10:30:52 jm python eval_pg_bot_103.py --agent1 chapter9/00001000.hdf5 --agent2 chapter9/00004040.hdf5
+  890  2024-03-29 10:31:55 jm python eval_pg_bot_103.py --agent1 chapter9/agent_00001000.hdf5 --agent2 chapter9agent_00004040.hdf5
+  891  2024-03-29 10:32:13 jm python eval_pg_bot_103.py --agent1 chapter9/agent_00001000.hdf5 --agent2 chapter9/agent_00004040.hdf5
+  892  2024-03-29 10:38:13 jm python eval_pg_bot_103.py --agent1 chapter9/agent_00000020.hdf5 --agent2 chapter9/agent_00004040.hdf5
+  893  2024-03-29 10:43:40 jm python eval_pg_bot_103.py --agent1 chapter9/agent_00000020.hdf5 --agent2 chapter9/agent_00004040.hdf5  --num-games 20
+  894  2024-03-29 12:30:41 jm cd chapter9
+  895  2024-03-29 12:30:42 jm ls
+  896  2024-03-29 12:30:49 jm cat log.txt 
+  897  2024-03-29 13:17:47 jm vim log.txt 
+  898  2024-03-29 16:15:50 jm cat log.txt 
+  899  2024-03-29 17:28:33 jm ls
+  900  2024-03-29 13:21:10 jm top
+  901  2024-03-29 14:52:38 jm ls
+  902  2024-03-29 14:52:41 jm cd go
+  903  2024-03-29 14:52:44 jm cd code
+  904  2024-03-29 14:52:48 jm cd chapter9
+  905  2024-03-29 14:52:52 jm ls
+  906  2024-03-29 14:53:02 jm vim log.txt 
+  907  2024-03-29 14:53:15 jm cat log.txt
+  908  2024-03-29 15:10:07 jm top
+  909  2024-03-29 16:34:58 jm cat log.txt
+  910  2024-03-29 17:35:01 jm exit
+  911  2024-03-29 19:08:29 jm top
+  912  2024-03-29 19:08:44 jm exit
+  913  2024-03-29 18:41:04 jm screen -r
+  914  2024-03-29 11:25:51 jm python
+  915  2024-03-29 12:29:46 jm ls
+  916  2024-03-29 13:39:43 jm python
+  917  2024-03-29 17:55:34 jm cat chapter9/log.txt 
+  918  2024-03-29 18:34:34 jm python
+  919  2024-03-29 18:38:21 jm cat chapter9/log.txt 
+  920  2024-03-29 09:26:59 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+  921  2024-03-30 05:55:08 jm screen ls
+  922  2024-03-30 05:55:43 jm ps -ef|grep python
+  923  2024-03-30 05:56:39 jm top
+  924  2024-03-30 05:57:03 jm ps -ef|grep python
+  925  2024-03-30 05:57:17 jm kill -9 15802
+  926  2024-03-30 05:57:19 jm ps -ef|grep python
+  927  2024-03-30 05:57:24 jm kill -9 15803
+  928  2024-03-30 05:57:27 jm ps -ef|grep python
+  929  2024-03-30 05:57:49 jm screen ls
+  930  2024-03-30 05:58:14 jm sudo service screen restart
+  931  2024-03-30 05:58:25 jm screen ls
+  932  2024-03-30 05:58:57 jm screen -S demo93
+  933  2024-03-30 05:59:13 jm screen ls
+  934  2024-03-30 06:03:41 jm exit
+  935  2024-03-28 19:34:03 jm screen -ls
+  936  2024-03-28 19:34:11 jm echo $STY
+  937  2024-03-28 19:34:31 jm pyenv activate dlgo36
+  938  2024-03-28 19:34:33 jm ls
+  939  2024-03-28 19:34:35 jm cd go
+  940  2024-03-28 19:34:36 jm cd code
+  941  2024-03-28 19:34:57 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4
+  942  2024-03-29 12:02:52 jm ls
+  943  2024-03-29 12:04:27 jm cd chapter9
+  944  2024-03-29 12:04:28 jm ls
+  945  2024-03-29 12:04:44 jm rm agent_0000*
+  946  2024-03-29 12:04:47 jm ls
+  947  2024-03-29 12:04:54 jm cd ..
+  948  2024-03-29 12:05:31 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 10
+  949  2024-03-29 13:19:59 jm cd /tmp
+  950  2024-03-29 13:20:00 jm ls
+  951  2024-03-29 13:20:10 jm ls -dl
+  952  2024-03-29 13:20:15 jm ls -al
+  953  2024-03-29 13:21:19 jm rm *
+  954  2024-03-29 13:21:26 jm ls
+  955  2024-03-29 13:21:31 jm rmp * -r
+  956  2024-03-29 13:21:36 jm rm * -r
+  957  2024-03-29 13:21:40 jm ls
+  958  2024-03-29 13:21:46 jm cd ~
+  959  2024-03-29 13:21:50 jm cd go
+  960  2024-03-29 13:21:52 jm cd code
+  961  2024-03-29 13:21:52 jm ls
+  962  2024-03-29 13:25:39 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 20
+  963  2024-03-29 13:26:54 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 10
+  964  2024-03-29 13:27:15 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers4
+  965  2024-03-29 13:27:20 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4
+  966  2024-03-29 20:43:48 jm ls chapter9/
+  967  2024-03-29 20:44:10 jm ls chapter9/ -al
+  968  2024-03-29 20:44:56 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4
+  969  2024-03-30 06:05:28 jm ls chapter9/
+  970  2024-03-30 06:16:23 jm exit
+  971  2024-03-30 06:03:49 jm screen -r
+  972  2024-03-30 06:04:09 jm screen -r 30641.ptv93 
+  973  2024-03-30 06:16:31 jm screen ls
+  974  2024-03-30 06:16:36 jm exit
+  975  2024-03-30 05:59:04 jm screen ls
+  976  2024-03-30 06:16:59 jm exit
+  977  2024-03-30 06:18:58 jm ls
+  978  2024-03-30 06:19:11 jm exit
+  979  2024-03-30 06:16:42 jm screen ls
+  980  2024-03-30 06:16:54 jm screen -r
+  981  2024-03-30 06:17:01 jm screen ls
+  982  2024-03-30 06:18:56 jm screen
+  983  2024-03-30 06:19:48 jm screen -ls
+  984  2024-03-30 06:20:14 jm pyenv activate dlgo36
+  985  2024-03-30 06:20:19 jm cd go/code
+  986  2024-03-30 06:20:31 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4
+  987  2024-03-30 06:23:24 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 >~/demo93.txt &
+  988  2024-03-30 06:23:51 jm tail -f ~/demo93.txt 
+  989  2024-03-30 06:24:57 jm vim ~/demo93.txt 
+  990  2024-03-30 06:25:15 jm ps -ef|grep python
+  991  2024-03-30 06:25:39 jm ps -ef|grep python
+  992  2024-03-30 06:25:52 jm tail -f ~/demo93.txt 
+  993  2024-03-30 06:26:11 jm kill -9 5201
+  994  2024-03-30 06:26:14 jm ps -ef|grep python
+  995  2024-03-30 06:26:26 jm kill -9 5202
+  996  2024-03-30 06:26:28 jm kill -9 5203
+  997  2024-03-30 06:26:30 jm kill -9 5204
+  998  2024-03-30 06:26:34 jm ps -ef|grep python
+  999  2024-03-30 06:26:46 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 >~/demo93.txt &
+ 1000  2024-03-30 06:26:56 jm tail -f ~/demo93.txt 
+ 1001  2024-03-30 06:27:17 jm ps -ef|grep python
+ 1002  2024-03-30 06:27:36 jm kill -9 6033
+ 1003  2024-03-30 06:27:40 jm ps -ef|grep python
+ 1004  2024-03-30 06:27:55 jm kill -9 6104 6105 6106 6107
+ 1005  2024-03-30 06:27:57 jm ps -ef|grep python
+ 1006  2024-03-30 06:28:08 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 >~/demo93.txt 
+ 1007  2024-03-30 06:28:31 jm ps -ef|grep python
+ 1008  2024-03-30 06:28:45 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1009  2024-03-30 07:28:52 jm ls
+ 1010  2024-03-30 07:28:58 jm cd chapter9/
+ 1011  2024-03-30 07:28:59 jm ls
+ 1012  2024-03-30 07:29:46 jm cp agent_00000240.hdf5 agent_temp.hdf5
+ 1013  2024-03-30 07:30:55 jm cd ..
+ 1014  2024-03-30 07:32:35 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1015  2024-03-30 07:53:00 jm top
+ 1016  2024-03-30 07:53:07 jm exit
+ 1017  2024-03-30 07:39:34 jm cat chapter9/log.txt 
+ 1018  2024-03-30 07:39:50 jm vim chapter9/log.txt 
+ 1019  2024-03-30 07:40:48 jm cd chapter9/
+ 1020  2024-03-30 07:40:49 jm ll
+ 1021  2024-03-30 07:43:47 jm md5sum pagent2.h5 
+ 1022  2024-03-30 07:44:01 jm md5sum agent_cur.hdf5 
+ 1023  2024-03-30 07:44:15 jm md5sum agent_temp.hdf5 
+ 1024  2024-03-30 07:44:28 jm md5sum agent_00000240.hdf5 
+ 1025  2024-03-30 07:45:13 jm ll -al
+ 1026  2024-03-30 07:45:31 jm md5sum agent_cur.hdf5 
+ 1027  2024-03-30 07:50:07 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1028  2024-03-30 07:50:14 jm cd ..
+ 1029  2024-03-30 07:50:16 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1030  2024-03-30 07:52:37 jm ps -ef|grep python
+ 1031  2024-03-30 07:52:45 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1032  2024-03-30 14:24:53 jm ls
+ 1033  2024-03-30 14:24:57 jm cd chapter9
+ 1034  2024-03-30 14:24:58 jm ls
+ 1035  2024-03-30 14:25:03 jm ls -al
+ 1036  2024-03-30 14:25:20 jm md5sum agent_temp.hdf5 
+ 1037  2024-03-30 14:25:29 jm md5sum agent_cru.hdf5 
+ 1038  2024-03-30 14:25:34 jm md5sum agent_cur.hdf5 
+ 1039  2024-03-30 14:25:56 jm md5sum agepagent1f5 
+ 1040  2024-03-30 14:26:17 jm md5sum pagent1.h5 
+ 1041  2024-03-30 14:26:23 jm md5sum pagent2.h5 
+ 1042  2024-03-30 14:26:43 jm md5sum agent_00000240.hdf5 
+ 1043  2024-03-30 14:32:00 jm ls
+ 1044  2024-03-30 14:32:12 jm md5sum agent_00000072.hdf5 
+ 1045  2024-03-30 14:32:34 jm md5sum agent_cur.hdf5 
+ 1046  2024-03-30 14:36:55 jm ls
+ 1047  2024-03-30 14:37:21 jm python
+ 1048  2024-03-30 14:42:05 jm ls
+ 1049  2024-03-30 14:42:45 jm rm agent_00000120.hdf5 
+ 1050  2024-03-30 14:42:52 jm rm agent_00000240.hdf5 
+ 1051  2024-03-30 14:42:54 jm ls
+ 1052  2024-03-30 14:43:13 jm ls -al
+ 1053  2024-03-30 14:44:23 jm ls
+ 1054  2024-03-30 14:44:27 jm cat log1.txt
+ 1055  2024-03-30 14:44:50 jm ls
+ 1056  2024-03-30 14:44:56 jm rm log.txt
+ 1057  2024-03-30 15:07:17 jm ls
+ 1058  2024-03-30 15:11:51 jm cat log.txt 
+ 1059  2024-03-30 15:18:12 jm python
+ 1060  2024-03-30 15:21:44 jm top
+ 1061  2024-03-30 15:28:57 jm cat log.txt 
+ 1062  2024-03-30 15:50:19 jm ls
+ 1063  2024-03-30 15:50:32 jm ls -al
+ 1064  2024-03-30 15:51:03 jm rm agent_00000024.hdf5 
+ 1065  2024-03-30 15:51:16 jm md5sum agent_00000024.hdf5 
+ 1066  2024-03-30 15:51:30 jm md5sum agent_00000048.hdf5 
+ 1067  2024-03-30 15:51:38 jm md5sum agent_00000072.hdf5 
+ 1068  2024-03-30 15:51:54 jm md5sum agent_00000096.hdf5 
+ 1069  2024-03-30 15:52:07 jm md5sum agent_cur.hdf5 
+ 1070  2024-03-30 15:52:25 jm md5sum agent_temp.hdf5 
+ 1071  2024-03-30 15:52:46 jm ls -al
+ 1072  2024-03-30 15:53:16 jm cat log.txt 
+ 1073  2024-03-30 13:44:11 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log1.txt --num-workers 4 
+ 1074  2024-03-30 14:10:36 jm cd chapter9/
+ 1075  2024-03-30 14:10:37 jm ls
+ 1076  2024-03-30 14:10:54 jm ls -al
+ 1077  2024-03-30 14:11:13 jm md5sum agent_00000240.hdf5 
+ 1078  2024-03-30 14:11:53 jm md5sum agent_00000024.hdf5 
+ 1079  2024-03-30 14:16:40 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log1.txt --num-workers 4 
+ 1080  2024-03-30 14:16:44 jm cd ..
+ 1081  2024-03-30 14:16:46 jm python play_train_eval_103.py --agent chapter9/pagent1.h5 --work-dir chapter9 --log-file chapter9/log1.txt --num-workers 4 
+ 1082  2024-03-30 15:07:22 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 4 
+ 1083  2024-03-30 15:21:30 jm python play_train_eval_103.py --agent chapter9/agent_cur.hdf5 --work-dir chapter9 --log-file chapter9/log.txt --num-workers 3 
+ 1084  2024-03-30 13:28:01 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+ 1085  2024-03-30 16:02:44 jm screen -ls
+ 1086  2024-03-30 16:03:03 jm screen -S littlestep
+ 1087  2024-03-30 16:09:27 jm exit
+ 1088  2024-03-30 13:29:50 jm ls
+ 1089  2024-03-30 13:30:00 jm screen -ls
+ 1090  2024-03-30 13:30:11 jm ps -ef|grep python
+ 1091  2024-03-30 13:30:16 jm cd code
+ 1092  2024-03-30 13:30:20 jm cd go/code
+ 1093  2024-03-30 13:30:21 jm ls
+ 1094  2024-03-30 13:30:33 jm cd chapter9/
+ 1095  2024-03-30 13:30:34 jm ls
+ 1096  2024-03-30 14:14:35 jm cat log1.txt
+ 1097  2024-03-30 20:37:38 jm top
+ 1098  2024-03-30 20:37:56 jm exit
+ 1099  2024-03-30 16:02:00 jm ps -ef|grep python
+ 1100  2024-03-30 16:51:47 jm cat log.txt
+ 1101  2024-03-30 16:56:48 jm ls
+ 1102  2024-03-30 17:00:40 jm cat log.txt
+ 1103  2024-03-30 17:02:53 jm python
+ 1104  2024-03-30 18:02:07 jm cat log.txt
+ 1105  2024-03-30 18:04:19 jm screen -r
+ 1106  2024-03-30 18:11:29 jm cat log.txt
+ 1107  2024-03-30 18:35:51 jm python
+ 1108  2024-03-30 18:41:48 jm cat log.txt
+ 1109  2024-03-30 18:42:39 jm ls
+ 1110  2024-03-30 18:42:52 jm vim log.txt 
+ 1111  2024-03-30 18:48:46 jm cat log.txt
+ 1112  2024-03-30 18:52:54 jm top
+ 1113  2024-03-30 19:10:48 jm cat log.txt
+ 1114  2024-03-30 19:48:21 jm python
+ 1115  2024-03-30 20:27:09 jm cat log.txt
+ 1116  2024-03-30 20:27:50 jm screen -r
+ 1117  2024-03-30 20:37:05 jm screen -ls
+ 1118  2024-03-30 20:37:17 jm screen -r
+ 1119  2024-03-30 16:06:55 jm python 
+ 1120  2024-03-30 16:09:32 jm screen -ls
+ 1121  2024-03-30 16:09:39 jm screen -r
+ 1122  2024-03-30 16:12:53 jm python
+ 1123  2024-03-30 20:36:24 jm cd chapter9
+ 1124  2024-03-30 20:36:34 jm cat log.txt 
+ 1125  2024-03-30 23:58:56 jm cd chapter9/
+ 1126  2024-03-30 23:58:57 jm ls
+ 1127  2024-03-30 23:59:07 jm cat log.txt 
+ 1128  2024-03-31 00:00:12 jm vim log.txt 
+ 1129  2024-03-30 23:58:17 jm /usr/bin/python3 /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/printEnvVariablesToFile.py /home/jm/.vscode-server/extensions/ms-python.python-2024.2.1/pythonFiles/deactivate/bash/envVars.txt
+ 1130  2024-03-31 04:50:26 jm cd chapter9
+ 1131  2024-03-31 04:50:31 jm cat log.txt
+ 1132  2024-03-31 04:51:05 jm cat vim .txt
+ 1133  2024-03-31 04:51:19 jm vim log.txt
+ 1134  2024-03-31 09:15:31 jm exit
+ 1135  2024-04-02 20:07:07 jm python play_train_eval_q_11.py --agent chapter11/qagent7.hdf5 -d chapter11  -l=chapter11/log.txt
+ 1136  2024-04-02 20:33:52 jm exit
+ 1137  2024-04-02 20:47:58 jm python play_train_eval_q_11.py --agent chapter11/qagent7.hdf5 -d chapter11  -l=chapter11/log.txt
+ 1138  2024-04-02 23:40:51 jm python play_train_eval_q_11.py --agent chapter11/qagent9.hdf5 -d chapter11  -l=chapter11/log.txt
+ 1139  2024-04-03 16:06:22 jm git status
+ 1140  2024-04-03 16:06:36 jm git add chapter11/log.txt 
+ 1141  2024-04-03 16:06:41 jm git status
+ 1142  2024-04-03 16:07:13 jm cd ..
+ 1143  2024-04-03 16:07:18 jm ls
+ 1144  2024-04-03 16:07:26 jm cd go
+ 1145  2024-04-03 16:07:32 jm vim .gitignore 
+ 1146  2024-04-03 16:08:06 jm git status
+ 1147  2024-04-03 16:08:14 jm cd code
+ 1148  2024-04-03 16:08:18 jm cd chapter11
+ 1149  2024-04-03 16:08:19 jm ls
+ 1150  2024-04-03 16:09:27 jm git commit -am "end of chapter11 "
+ 1151  2024-04-03 16:09:39 jm git push origin verify11
+ 1152  2024-04-03 16:10:09 jm cd ..
+ 1153  2024-04-03 16:10:30 jm git checkout master
+ 1154  2024-04-03 16:13:02 jm git checkout -b verify12
+ 1155  2024-04-03 16:13:06 jm ls
+ 1156  2024-04-03 16:13:22 jm mkdir chapter12
+ 1157  2024-04-03 16:13:24 jm ls
+ 1158  2024-04-03 16:13:40 jm git status
+ 1159  2024-04-03 16:18:37 jm ls
+ 1160  2024-04-03 16:23:29 jm python init_ac_agent.py --board-size 9 ac_v1.hdf5
+ 1161  2024-04-03 16:27:30 jm python self_play_ac.py --board-size 9 --learning-agent ac_v1.hdf5 --num-games 5000 \
+ 1162  2024-04-03 16:28:14 jm python self_play_ac.py --board-size 9 --learning-agent ac_v1.hdf5 --num-games 50 --experience-out exp_0001.hdf5
+ 1163  2024-04-03 16:29:36 jm python self_play.py --board-size 9 --learning-agent ac_v1.hdf5 --num-games 50 --experience-out exp_0001.hdf5
+ 1164  2024-04-03 16:30:19 jm python self_play.py --board-size 9 --learning-agent ac_v1.hdf5 --num-games 50 --experience-out exp_0001.hdf5 --game-log-out chapter12/log.txt
+ 1165  2024-04-03 16:31:23 jm python self_play.py --learning-agent ac_v1.hdf5 --num-games 50 --experience-out exp_0001.hdf5 --game-log-out chapter12/log.txt
+ 1166  2024-04-03 16:42:21 jm screen -ls
+ 1167  2024-04-03 16:42:54 jm history|grep 11
+ 1168  2024-04-03 16:43:39 jm history > a.txt

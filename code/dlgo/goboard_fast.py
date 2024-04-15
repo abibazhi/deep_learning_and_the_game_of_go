@@ -367,13 +367,31 @@ class GameState():
             not self.does_move_violate_ko(self.next_player, move))
 
     def is_over(self):
+        #print("aaaaaaaaa")
+        #print(self.last_move)
+        #print(type(self.last_move))
+        if not isinstance(self.last_move, Move):
+            print(f"self.last_move{self.last_move}")
+            print(f"type(self.last_move)={type(self.last_move)}")
+            print("类型不对啊，怎么办？。。。")
+            if isinstance(self.last_move, tuple):
+                print("这里吗？。。。")
+                point = Point(self.last_move[0], self.last_move[1])
+                print(f"Point created: {point}")  # 添加此行，查看point的输出
+                move = Move.play(point)
+                self.last_move = move
+
         if self.last_move is None:
             return False
         if self.last_move.is_resign:
             return True
-        second_last_move = self.previous_state.last_move
-        if second_last_move is None:
+        if self.previous_state is None:
             return False
+        else:
+            second_last_move = self.previous_state.last_move
+            if second_last_move is None:
+                return False
+
         return self.last_move.is_pass and second_last_move.is_pass
 
     def legal_moves(self):

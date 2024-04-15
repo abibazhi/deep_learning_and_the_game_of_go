@@ -68,6 +68,16 @@ class GoDataProcessor:
 
     def process_zip(self, zip_file_name, data_file_name, game_list):
         try:
+            if zip_file_name in ["KGS-2005-19-13941-.tar.gz","KGS-2001-19-2298-.tar.gz",
+                                 "KGS-2013-19-13783-.tar.gz","KGS-2010-19-17536-.tar.gz",
+                                 "KGS-2006-19-10388-.tar.gz","KGS-2004-19-12106-.tar.gz",
+                                 "KGS-2008-19-14002-.tar.gz","KGS-2011-19-19099-.tar.gz",
+                                 "KGS-2009-19-18837-.tar.gz","KGS-2007-19-11644-.tar.gz",
+                                 "KGS-2015-19-8133-.tar.gz","KGS-2003-19-7582-.tar.gz",
+                                 "KGS-2002-19-3646-.tar.gz","KGS-2014-19-13029-.tar.gz",
+                                 "KGS-2012-19-13665-.tar.gz"]:
+                print("文件可能太大了！")
+                #return
             tar_file = self.unzip_data(zip_file_name)
             zip_file = tarfile.open(self.data_dir + '/' + tar_file)
             name_list = zip_file.getnames()
@@ -83,6 +93,16 @@ class GoDataProcessor:
         total_examples = self.num_total_examples(zip_file, game_list, name_list)
         shape = self.encoder.shape()
         feature_shape = np.insert(shape, 0, np.asarray([total_examples]))
+
+        if total_examples > 10000:
+            return
+        else:
+            print(f"total_examples={total_examples}")
+
+
+
+        #features = np.zeros(feature_shape, dtype=np.float16)
+        #labels = np.zeros((total_examples,), dtype=np.float16)
         features = np.zeros(feature_shape)
         labels = np.zeros((total_examples,))
 
@@ -108,17 +128,23 @@ class GoDataProcessor:
                         move = Move.pass_turn()
                     if first_move_done and point is not None:
                         features[counter] = self.encoder.encode(game_state)
+                        # 这个地方正常，不用打了
+                        # print(f"self.encoder.encode返回形状{features[counter].shape}")
                         labels[counter] = self.encoder.encode_point(point)
                         counter += 1
                     game_state = game_state.apply_move(move)
                     first_move_done = True
+                    print("正在下棋中。。。一招结束了。。。")
 
         feature_file_base = self.data_dir + '/' + data_file_name + '_features_%d'
         label_file_base = self.data_dir + '/' + data_file_name + '_labels_%d'
 
+        print("棋下完了bbbbccccccccdddddd")
+
         chunk = 0  # Due to files with large content, split up after chunksize
         chunksize = 1024
         while features.shape[0] >= chunksize:
+            print("dddddd")
             feature_file = feature_file_base % chunk
             label_file = label_file_base % chunk
             chunk += 1
@@ -194,6 +220,7 @@ class GoDataProcessor:
                                         data_file_name, indices_by_zip_name[zip_name]))
 
         cores = multiprocessing.cpu_count()  # Determine number of CPU cores and split work load among them
+        cores = 1
         pool = multiprocessing.Pool(processes=cores)
         p = pool.map_async(worker, zips_to_process)
         try:

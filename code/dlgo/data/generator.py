@@ -31,12 +31,15 @@ class DataGenerator:
             for feature_file in glob.glob(base):
                 label_file = feature_file.replace('features', 'labels')
                 x = np.load(feature_file)
+                print(f"这个是从文件加载出来的{x.shape}")
                 y = np.load(label_file)
                 x = x.astype('float32')
                 y = to_categorical(y.astype(int), num_classes)
                 while x.shape[0] >= batch_size:
                     x_batch, x = x[:batch_size], x[batch_size:]
                     y_batch, y = y[:batch_size], y[batch_size:]
+                    #print(x_batch.shape) # (128,19,19,1)
+                    #print(y_batch.shape) # (128,361)
                     yield x_batch, y_batch  # <1>
 
 # <1> We return or "yield" batches of data as we go.

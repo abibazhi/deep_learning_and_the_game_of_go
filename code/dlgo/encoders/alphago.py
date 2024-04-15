@@ -79,6 +79,7 @@ class AlphaGoEncoder(Encoder):
                     board_tensor[offset("liberties") + liberties][r][c] = 1
 
                 move = Move(point)
+                #print(point)
                 if game_state.is_valid_move(move):
                     new_state = game_state.apply_move(move)
                     liberties = min(new_state.board.get_go_string(point).num_liberties, 8)
