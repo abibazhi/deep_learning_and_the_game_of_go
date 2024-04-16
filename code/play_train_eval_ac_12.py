@@ -269,11 +269,11 @@ def evaluate(learning_agent, reference_agent,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--agent', required=True)
-    parser.add_argument('--games-per-batch', '-g', type=int, default=160)
+    parser.add_argument('--games-per-batch', '-g', type=int, default=500)
     parser.add_argument('--work-dir', '-d')
     parser.add_argument('--num-workers', '-w', type=int, default=4)
     parser.add_argument('--board-size', '-b', type=int, default=11)
-    parser.add_argument('--lr', type=float, default=0.000001)
+    parser.add_argument('--lr', type=float, default=0.007)
     parser.add_argument('--bs', type=int, default=512)
     parser.add_argument('--log-file', '-l')
 
@@ -296,8 +296,8 @@ def main():
     total_games = 0
 
     #his_wons = np.array([])
-    his_wons = [32] # 开始是空数据太好。如果第一个合格的是35。有点大。所以加个32。这样只要33就可以合格，门槛第一点。
-    avg_move_wons = 32 #初始化平均值，只有大于这个平均值的，才才采纳为继续训练。
+    his_wons = [] # 开始是空数据太好。如果第一个合格的是35。有点大。所以加个32。这样只要33就可以合格，门槛第一点。
+    avg_move_wons = 0 #初始化平均值，只有大于这个平均值的，才才采纳为继续训练。
     #avg_wons = np.mean(his_wons) #这是算法，实际等有了数据再算
 
 
@@ -316,27 +316,33 @@ def main():
         total_games += args.games_per_batch
         wins = evaluate(
             learning_agent, reference_agent,
-            num_games=64,
+            num_games=100,
             num_workers=args.num_workers,
             board_size=args.board_size)
-        print('Won %d / 64 games (%.3f)' % (
-            wins, float(wins) / 64.0))
-        logf.write('Won %d / 64 games (%.3f)\n' % (
-            wins, float(wins) / 64.0))
+        print('Won %d / 100 games (%.3f)' % (
+            wins, float(wins) / 100.0))
+        logf.write('Won %d / 100 games (%.3f)\n' % (
+            wins, float(wins) / 100.0))
         shutil.copy(tmp_agent, working_agent)
 
-        if wins >= avg_move_wons and wins <= (avg_move_wons + 3):
-            # 只有大于过去的平均成绩，才能有效升级
-            # 但也不能大太多，太多是随机过头了。可能。需要抑制随机性。
-            his_wons.append(wins)
-            avg_move_wons = sum(his_wons) / len(his_wons)
-            print(f"当前平均胜局数为{avg_move_wons}")
-            logf.write(f"当前平均胜局数为{avg_move_wons}")
+        # 只有大于过去的平均成绩，才能有效升级
+        # 但也不能大太多，太多是随机过头了。可能。需要抑制随机性。
+        #his_wons.append(wins)
+        #print(his_wons)
+        #if len(his_wons) > 15:
+        #    avg_move_wons = sum(his_wons[-15:]) / 15
+        #else:
+        #    avg_move_wons = sum(his_wons) / len(his_wons)
+        
+        #logf.write("当前轮胜负情况\n")
+        #logf.write(f"wins={wins},avg_move_wons={avg_move_wons},总轮次:{len(his_wons)}\n\n")
 
-            learning_agent = working_agent
-            logf.write("升级！...")
-            #print("升级！。。。")
-        if wins >= 42:
+        
+        #if wins > 62: # and wins <= (avg_move_wons + 3):
+        #    #print(f"当前平均胜局数为{avg_move_wons}")
+        #    logf.write("升级！\n")
+        learning_agent = working_agent
+        if wins >= 62:
             next_filename = os.path.join(
                 args.work_dir,
                 'agent50_%08d.hdf5' % (total_games,))
@@ -345,9 +351,8 @@ def main():
             logf.write('New reference is %s\n' % next_filename)
             
             # 统计数据清零。重新初始化。
-            his_wons = [32]
-            avg_move_wons = 32
-
+            his_wons = []
+            avg_move_wons = 0
         else:
             print('Keep learning\n')
         logf.flush()

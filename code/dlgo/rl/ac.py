@@ -76,10 +76,10 @@ class ACAgent(Agent):
         opt = SGD(lr=lr, clipvalue=0.2)
         self.model.compile(
             optimizer=opt,
-            loss=['categorical_crossentropy', 'mse'],loss_weights=[1, 0.25])
+            loss=['categorical_crossentropy', 'mse'],loss_weights=[0.9,0.1])
 
         n = experience.states.shape[0]
-        batch_size = int(n/160*10) + 1
+        batch_size = int(n/500*25) + 1
         print(f"batchsize={batch_size},lr={lr}")
 
 
@@ -96,7 +96,7 @@ class ACAgent(Agent):
             experience.states,
             [policy_target, value_target],
             batch_size=batch_size,
-            epochs=1)
+            epochs=2)
 
         with open("chapter12/log50.txt", 'a') as logf:
             logf.write('---loss-------------------\n')
