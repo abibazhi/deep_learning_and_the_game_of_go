@@ -6,6 +6,8 @@ from keras.callbacks import ModelCheckpoint
 import h5py
 
 
+
+
 def train():
     rows, cols = 19, 19
     num_classes = rows * cols

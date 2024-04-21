@@ -12,6 +12,8 @@ def save_model_to_hdf5_group(model, f):
     # state) to a file.
     # Then we can embed the contents of that HDF5 file inside ours.
     tempfd, tempfname = tempfile.mkstemp(prefix='tmp-kerasmodel')
+    tempfname = tempfname +".h5"
+    #model.summary()
     try:
         os.close(tempfd)
         save_model(model, tempfname)

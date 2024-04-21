@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from keras.layers import LeakyReLU
-from keras.layers.core import Dense, Flatten
-from keras.layers.convolutional import Conv2D, ZeroPadding2D
+from keras.layers import Dense, Flatten
+from keras.layers import Conv2D, ZeroPadding2D
 
 
 def layers(input_shape):

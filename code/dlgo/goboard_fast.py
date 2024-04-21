@@ -367,19 +367,29 @@ class GameState():
             not self.does_move_violate_ko(self.next_player, move))
 
     def is_over(self):
-        #print("aaaaaaaaa")
-        #print(self.last_move)
-        #print(type(self.last_move))
-        if not isinstance(self.last_move, Move):
-            print(f"self.last_move{self.last_move}")
-            print(f"type(self.last_move)={type(self.last_move)}")
-            print("类型不对啊，怎么办？。。。")
-            if isinstance(self.last_move, tuple):
-                print("这里吗？。。。")
+        if isinstance(self.last_move, tuple):
+            try:
                 point = Point(self.last_move[0], self.last_move[1])
-                print(f"Point created: {point}")  # 添加此行，查看point的输出
-                move = Move.play(point)
-                self.last_move = move
+                print(f"Point created: {point}")
+                self.last_move = Move.play(point)
+            except Exception as e:
+                print(f"An error occurred while converting last_move: {e}")
+                # 在此处可选择性地添加错误处理代码或记录日志
+                # 若希望程序继续执行，可保持 self.last_move 不变或赋予默认值等
+
+        # # 其他代码...
+        # #print(self.last_move)
+        # #print(type(self.last_move))
+        # if not isinstance(self.last_move, Move):
+        #     print(f"self.last_move{self.last_move}")
+        #     print(f"type(self.last_move)={type(self.last_move)}")
+        #     #print("类型不对啊，怎么办？。。。")
+        #     if isinstance(self.last_move, tuple):
+        #         print("")
+        #         point = Point(self.last_move[0], self.last_move[1])
+        #         print(f"Point created: {point}")  # 添加此行，查看point的输出
+        #         move = Move.play(point)
+        #         self.last_move = move
 
         if self.last_move is None:
             return False

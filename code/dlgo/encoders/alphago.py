@@ -71,8 +71,11 @@ class AlphaGoEncoder(Encoder):
 
                 ages = min(game_state.board.move_ages.get(r, c), 8)
                 if ages > 0:
-                    print(ages)
-                    board_tensor[offset("turns_since") + ages][r][c] = 1
+                    #print(ages)
+                    #print('bbbbbbbbb')
+                    #print(offset("turns_since"), r, c)
+                    #print(offset("turns_since") + int(ages))
+                    board_tensor[offset("turns_since") + int(ages)][r][c] = 1
 
                 if game_state.board.get_go_string(point):
                     liberties = min(game_state.board.get_go_string(point).num_liberties, 8)

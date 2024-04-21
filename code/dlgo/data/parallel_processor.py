@@ -34,6 +34,20 @@ class GoDataProcessor:
         self.encoder = get_encoder_by_name(encoder, 19)
         self.data_dir = data_directory
 
+    def load_go_data1(self, data_type='train', num_samples=1000,
+                     use_generator=False):
+        index = KGSIndex(data_directory=self.data_dir)
+        index.download_files()
+
+        sampler = Sampler(data_dir=self.data_dir)
+        data = sampler.draw_data(data_type, num_samples)
+        print("sample结果：")
+        print(data)
+        print(f"data_type={data_type}")
+        self.map_to_workers(data_type, data)  # <1>
+
+        return 
+
 # tag::load_generator[]
     def load_go_data(self, data_type='train', num_samples=1000,
                      use_generator=False):
@@ -68,16 +82,16 @@ class GoDataProcessor:
 
     def process_zip(self, zip_file_name, data_file_name, game_list):
         try:
-            if zip_file_name in ["KGS-2005-19-13941-.tar.gz","KGS-2001-19-2298-.tar.gz",
-                                 "KGS-2013-19-13783-.tar.gz","KGS-2010-19-17536-.tar.gz",
-                                 "KGS-2006-19-10388-.tar.gz","KGS-2004-19-12106-.tar.gz",
-                                 "KGS-2008-19-14002-.tar.gz","KGS-2011-19-19099-.tar.gz",
-                                 "KGS-2009-19-18837-.tar.gz","KGS-2007-19-11644-.tar.gz",
-                                 "KGS-2015-19-8133-.tar.gz","KGS-2003-19-7582-.tar.gz",
-                                 "KGS-2002-19-3646-.tar.gz","KGS-2014-19-13029-.tar.gz",
-                                 "KGS-2012-19-13665-.tar.gz"]:
-                print("文件可能太大了！")
-                #return
+            # if zip_file_name in ["KGS-2005-19-13941-.tar.gz","KGS-2001-19-2298-.tar.gz",
+            #                      "KGS-2013-19-13783-.tar.gz","KGS-2010-19-17536-.tar.gz",
+            #                      "KGS-2006-19-10388-.tar.gz","KGS-2004-19-12106-.tar.gz",
+            #                      "KGS-2008-19-14002-.tar.gz","KGS-2011-19-19099-.tar.gz",
+            #                      "KGS-2009-19-18837-.tar.gz","KGS-2007-19-11644-.tar.gz",
+            #                      "KGS-2015-19-8133-.tar.gz","KGS-2003-19-7582-.tar.gz",
+            #                      "KGS-2002-19-3646-.tar.gz","KGS-2014-19-13029-.tar.gz",
+            #                      "KGS-2012-19-13665-.tar.gz"]:
+            #     print("文件可能太大了！")
+            #     #return
             tar_file = self.unzip_data(zip_file_name)
             zip_file = tarfile.open(self.data_dir + '/' + tar_file)
             name_list = zip_file.getnames()
@@ -94,17 +108,17 @@ class GoDataProcessor:
         shape = self.encoder.shape()
         feature_shape = np.insert(shape, 0, np.asarray([total_examples]))
 
-        if total_examples > 10000:
-            return
-        else:
-            print(f"total_examples={total_examples}")
+        # if total_examples > 10000:
+        #     return
+        # else:
+        #     print(f"total_examples={total_examples}")
 
 
 
         #features = np.zeros(feature_shape, dtype=np.float16)
         #labels = np.zeros((total_examples,), dtype=np.float16)
-        features = np.zeros(feature_shape)
-        labels = np.zeros((total_examples,))
+        features = np.zeros(feature_shape, dtype=np.float32)
+        labels = np.zeros((total_examples,), dtype=np.float32 )
 
         counter = 0
         for index in game_list:
@@ -134,7 +148,7 @@ class GoDataProcessor:
                         counter += 1
                     game_state = game_state.apply_move(move)
                     first_move_done = True
-                    print("正在下棋中。。。一招结束了。。。")
+                    #print("正在下棋中。。。一招结束了。。。")
 
         feature_file_base = self.data_dir + '/' + data_file_name + '_features_%d'
         label_file_base = self.data_dir + '/' + data_file_name + '_labels_%d'
@@ -144,7 +158,7 @@ class GoDataProcessor:
         chunk = 0  # Due to files with large content, split up after chunksize
         chunksize = 1024
         while features.shape[0] >= chunksize:
-            print("dddddd")
+            #print("dddddd")
             feature_file = feature_file_base % chunk
             label_file = label_file_base % chunk
             chunk += 1
@@ -152,6 +166,8 @@ class GoDataProcessor:
             current_labels, labels = labels[:chunksize], labels[chunksize:]
             np.save(feature_file, current_features)
             np.save(label_file, current_labels)
+        print("保存完毕")
+        
 
     def consolidate_games(self, name, samples):
         files_needed = set(file_name for file_name, index in samples)
@@ -201,6 +217,8 @@ class GoDataProcessor:
         return game_state, first_move_done
 
     def map_to_workers(self, data_type, samples):
+        print("在map_to_workers里面了。。。")
+        print(f"data_type={data_type}")
         zip_names = set()
         indices_by_zip_name = {}
         for filename, index in samples:
@@ -213,7 +231,7 @@ class GoDataProcessor:
         for zip_name in zip_names:
             base_name = zip_name.replace('.tar.gz', '')
             data_file_name = base_name + data_type
-            print("aaaaaaaaaaaaaaa")
+            #print("aaaaaaaaaaaaaaa")
             print(data_file_name)
             if not os.path.isfile(self.data_dir + '/' + data_file_name):
                 zips_to_process.append((self.__class__, self.encoder_string, zip_name,

@@ -23,6 +23,10 @@ class Sampler:
         self.compute_test_samples()
 
     def draw_data(self, data_type, num_samples):
+        print("在draw_data入口处：")
+        print(f"data_type={data_type}")
+        print(f"num_samples={num_samples}")
+        
         if data_type == 'test':
             return self.test_games
         elif data_type == 'train' and num_samples is not None:
