@@ -73,8 +73,14 @@ class KerasMultiFileDatasetGenerator(KerasDatasetGenerator):
         print(pattern)
         #print(file_list)
         print(self.num_files)
+
+
         if self.num_files is not None:
             selected_files = random.sample(file_list, k=self.num_files)
+            with open('filelist.txt', 'w') as f:
+                # 遍历数组，将每个文件名写入文件并添加换行符
+                for filename in selected_files:
+                    f.write(filename + '\n')
         else:
             selected_files = file_list
         data_list = [np.load(file) for file in selected_files]  # 加载选定的文件内容
@@ -120,18 +126,18 @@ def train():
     #latest = sorted(glob.glob('../checkpoints/alphago*.keras'), key=lambda x: int(x.split('.')[0]))
     #latest_model_path = latest[-1]  # 获取最后一个checkpoint文件路径
 
-    latest_model_path = "../checkpoints/alphago10.keras"
+    latest_model_path = "../checkpoints/alphago_100.keras"
     print(latest_model_path)
     alphago_sl_policy = load_model(latest_model_path, compile=False)  # 加载模型权重
     print(2)
-    optimizer = SGD(learning_rate=0.01)
+    optimizer = SGD(learning_rate=0.1)
     print(3)
     alphago_sl_policy.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 
 
     epochs = 100
-    batch_size = 128
+    batch_size = 256
 
 
     features_pattern = "./code/data/*train_features*.npy"
@@ -146,7 +152,7 @@ def train():
     print(f"Total number of features in the dataset: {total_features_count}")
 
     steps_per_epoch = int(total_features_count/batch_size/epochs)
-    steps_per_epoch = 200
+    steps_per_epoch = 100
     print(batch_size, steps_per_epoch)
 
     alphago_sl_policy.fit(train_dataset, 
