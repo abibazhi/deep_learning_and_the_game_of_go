@@ -71,13 +71,13 @@ class KerasMultiFileDatasetGenerator(KerasDatasetGenerator):
         file_list = sorted(glob.glob(pattern))  # 获取匹配模式的所有文件，按名称排序
         print("aaaaa")
         print(pattern)
-        #print(file_list)
+        print(file_list)
         print(self.num_files)
 
 
         if self.num_files is not None:
             selected_files = random.sample(file_list, k=self.num_files)
-            with open('filelist.txt', 'w') as f:
+            with open('selected_files.txt', 'w') as f:
                 # 遍历数组，将每个文件名写入文件并添加换行符
                 for filename in selected_files:
                     f.write(filename + '\n')
@@ -87,8 +87,10 @@ class KerasMultiFileDatasetGenerator(KerasDatasetGenerator):
         return np.concatenate(data_list, axis=0)  # 沿着第一个轴（样本维度）拼接所有数据
 
     def create_dataset(self):
+        #这里执行了两个load,所以文件啊清单是后面那个label的。
         features = self.load_data_from_multiple_files(self.features_pattern)
         labels = self.load_data_from_multiple_files(self.labels_pattern)
+        #return
 
         preprocessed_features, preprocessed_labels = self.preprocess_data(features, labels)
 
@@ -112,38 +114,29 @@ def train():
 
 
     encoder = AlphaGoEncoder()
-    #processor = GoDataProcessor(encoder=encoder.name())
-    #generator = processor.load_go_data('train', num_games, use_generator=True)
-    #test_generator = processor.load_go_data('test', num_games, use_generator=True)
+
     print("生成数据就好了！")
     print("下面就光是训练")
     print(encoder.num_planes)
-
-    #input_shape = ( rows, cols, encoder.num_planes)
-    #alphago_sl_policy = alphago_model(input_shape, is_policy_net=True)
-    #alphago_sl_policy.compile('sgd', 'categorical_crossentropy', metrics=['accuracy'])
-
-    #latest = sorted(glob.glob('../checkpoints/alphago*.keras'), key=lambda x: int(x.split('.')[0]))
-    #latest_model_path = latest[-1]  # 获取最后一个checkpoint文件路径
 
     latest_model_path = "../checkpoints/alphago_100.keras"
     print(latest_model_path)
     alphago_sl_policy = load_model(latest_model_path, compile=False)  # 加载模型权重
     print(2)
-    optimizer = SGD(learning_rate=0.1)
+    optimizer = SGD(learning_rate=0.05)
     print(3)
     alphago_sl_policy.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 
 
-    epochs = 100
-    batch_size = 256
+    epochs = 100  #100
+    batch_size = 256 + 32 #512
 
 
     features_pattern = "./code/data/*train_features*.npy"
     labels_pattern = "./code/data/*train_labels*.npy"
     # 抽取10个文件作为数据集
-    generator = KerasMultiFileDatasetGenerator(features_pattern, labels_pattern, batch_size=128, num_files=25)
+    generator = KerasMultiFileDatasetGenerator(features_pattern, labels_pattern, batch_size=128, num_files=36)
     train_dataset = generator.create_dataset()
 
     total_features_count = 0
@@ -152,8 +145,8 @@ def train():
     print(f"Total number of features in the dataset: {total_features_count}")
 
     steps_per_epoch = int(total_features_count/batch_size/epochs)
-    steps_per_epoch = 100
-    print(batch_size, steps_per_epoch)
+    # steps_per_epoch = 128
+    print(f"bs={batch_size},steps_per_epoch={steps_per_epoch}")
 
     alphago_sl_policy.fit(train_dataset, 
                           epochs=epochs, 
