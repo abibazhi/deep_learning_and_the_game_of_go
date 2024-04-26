@@ -102,7 +102,7 @@ class KerasMultiFileDatasetGenerator(KerasDatasetGenerator):
         dataset = dataset.batch(self.batch_size)
         dataset = dataset.prefetch(tf.data.AUTOTUNE)
 
-        dataset = dataset.repeat(100)
+        dataset = dataset.repeat(200)
 
         return dataset
 
@@ -123,13 +123,13 @@ def train():
     print(latest_model_path)
     alphago_sl_policy = load_model(latest_model_path, compile=False)  # 加载模型权重
     print(2)
-    optimizer = SGD(learning_rate=0.05)
+    optimizer = SGD(learning_rate=0.01)
     print(3)
     alphago_sl_policy.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 
 
-    epochs = 100  #100
+    epochs = 200  #100
     batch_size = 256 + 32 #512
 
 
