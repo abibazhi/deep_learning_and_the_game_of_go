@@ -18,6 +18,8 @@ class Sampler:
         self.train_games = []
         self.test_folder = 'test_samples.py'
         self.cap_year = cap_year
+        
+        seed = random.randint(1, 5000)
 
         random.seed(seed)
         self.compute_test_samples()

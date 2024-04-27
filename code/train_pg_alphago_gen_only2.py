@@ -11,7 +11,7 @@ import h5py
 def train():
     rows, cols = 19, 19
     num_classes = rows * cols
-    num_games = 1000
+    num_games = 6000
 
 
     encoder = AlphaGoEncoder()

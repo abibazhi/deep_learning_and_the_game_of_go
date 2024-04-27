@@ -34,7 +34,7 @@ class GoDataProcessor:
         self.encoder = get_encoder_by_name(encoder, 19)
         self.data_dir = data_directory
 
-    def load_go_data1(self, data_type='train', num_samples=1000,
+    def load_go_data1(self, data_type='train', num_samples=3000,
                      use_generator=False):
         index = KGSIndex(data_directory=self.data_dir)
         index.download_files()
@@ -113,12 +113,12 @@ class GoDataProcessor:
         # else:
         #     print(f"total_examples={total_examples}")
 
-
-
         #features = np.zeros(feature_shape, dtype=np.float16)
         #labels = np.zeros((total_examples,), dtype=np.float16)
-        features = np.zeros(feature_shape, dtype=np.float32)
-        labels = np.zeros((total_examples,), dtype=np.float32 )
+        #features = np.zeros(feature_shape, dtype=np.float32)
+        #labels = np.zeros((total_examples,), dtype=np.float32 )
+        features = np.zeros(feature_shape, dtype=np.int8)
+        labels = np.zeros((total_examples,), dtype=np.int8)
 
         counter = 0
         for index in game_list:
