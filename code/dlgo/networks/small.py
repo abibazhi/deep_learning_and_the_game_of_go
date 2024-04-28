@@ -1,8 +1,8 @@
 from __future__ import absolute_import
 
 # tag::small_network[]
-from keras.layers.core import Dense, Activation, Flatten
-from keras.layers.convolutional import Conv2D, ZeroPadding2D
+from keras.layers import Dense, Activation, Flatten
+from keras.layers import Conv2D, ZeroPadding2D
 
 
 def layers(input_shape):

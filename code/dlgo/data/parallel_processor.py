@@ -44,10 +44,13 @@ class GoDataProcessor:
         data = sampler.draw_data(data_type, num_samples)
 
         self.map_to_workers(data_type, data)  # <1>
+        print("222222")
         if use_generator:
             generator = DataGenerator(self.data_dir, data)
             return generator  # <2>
         else:
+            print("333333")
+
             features_and_labels = self.consolidate_games(data_type, data)
             return features_and_labels  # <3>
 
@@ -119,26 +122,51 @@ class GoDataProcessor:
             np.save(label_file, current_labels)
 
     def consolidate_games(self, name, samples):
+        print("444444")
         files_needed = set(file_name for file_name, index in samples)
         file_names = []
         for zip_file_name in files_needed:
             file_name = zip_file_name.replace('.tar.gz', '') + name
             file_names.append(file_name)
 
+        print("555555")
+
         feature_list = []
         label_list = []
         for file_name in file_names:
-            file_prefix = file_name.replace('.tar.gz', '')
-            base = self.data_dir + '/' + file_prefix + '_features_*.npy'
-            for feature_file in glob.glob(base):
-                label_file = feature_file.replace('features', 'labels')
-                x = np.load(feature_file)
-                y = np.load(label_file)
-                x = x.astype('float32')
-                y = to_categorical(y.astype(int), 19 * 19)
-                feature_list.append(x)
-                label_list.append(y)
+            print("66666")
 
+            file_prefix = file_name.replace('.tar.gz', '')
+            print("666661")
+
+            base = self.data_dir + '/' + file_prefix + '_features_*.npy'
+            print("666662")
+
+            for feature_file in glob.glob(base):
+                print("777777")
+
+                label_file = feature_file.replace('features', 'labels')
+                print("7777771")
+
+                x = np.load(feature_file)
+                print("7777772")
+                print(feature_file)
+                print(x.shape)
+
+                y = np.load(label_file)
+                print("7777773")
+
+                #x = x.astype('float32')
+                x = x.astype('int8')
+
+                y = to_categorical(y.astype('int8'), 19 * 19)
+                if x.shape == (1024,49,19,19):
+                    feature_list.append(x)
+                    print("7777774")
+                    label_list.append(y)
+                    print("7777775")
+
+        print("888888")
         features = np.concatenate(feature_list, axis=0)
         labels = np.concatenate(label_list, axis=0)
 
@@ -183,6 +211,7 @@ class GoDataProcessor:
                                         data_file_name, indices_by_zip_name[zip_name]))
 
         cores = multiprocessing.cpu_count()  # Determine number of CPU cores and split work load among them
+        cores = 1
         pool = multiprocessing.Pool(processes=cores)
         p = pool.map_async(worker, zips_to_process)
         try:

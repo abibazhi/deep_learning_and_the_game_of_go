@@ -4,7 +4,7 @@ from dlgo.encoders.oneplane import OnePlaneEncoder
 
 from dlgo.networks import small
 from keras.models import Sequential
-from keras.layers.core import Dense
+from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint  # <1>
 
 # <1> With model checkpoints we can store progress for time-consuming experiments

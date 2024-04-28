@@ -4,7 +4,7 @@ import os
 import h5py
 from keras.models import Sequential
 from keras.optimizers import Adadelta
-from keras.layers.core import Dense, Activation
+from keras.layers import Dense, Activation
 
 from dlgo import kerasutil
 
