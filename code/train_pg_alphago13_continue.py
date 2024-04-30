@@ -100,7 +100,7 @@ class KerasMultiFileDatasetGenerator(KerasDatasetGenerator):
         dataset = tf.data.Dataset.from_tensor_slices((preprocessed_features, preprocessed_labels))
         dataset = dataset.shuffle(buffer_size=len(preprocessed_features))
         dataset = dataset.batch(self.batch_size)
-        dataset = dataset.prefetch(tf.data.AUTOTUNE)
+        #dataset = dataset.prefetch(tf.data.AUTOTUNE)
 
         dataset = dataset.repeat(200)
 
@@ -119,24 +119,24 @@ def train():
     print("下面就光是训练")
     print(encoder.num_planes)
 
-    latest_model_path = "../checkpoints/alphago_100.keras"
+    latest_model_path = "../checkpoints/alphago_200.keras"
     print(latest_model_path)
     alphago_sl_policy = load_model(latest_model_path, compile=False)  # 加载模型权重
     print(2)
-    optimizer = SGD(learning_rate=0.01)
+    optimizer = SGD(learning_rate=0.001)
     print(3)
     alphago_sl_policy.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
-
+    # 50*1024/256 = 200 #每个epoch200步，每步的batch_size=256,总共50*1024。
 
     epochs = 200  #100
-    batch_size = 256 + 32 #512
+    batch_size = 256 #+ 32 #512
 
 
     features_pattern = "./code/data/*train_features*.npy"
     labels_pattern = "./code/data/*train_labels*.npy"
     # 抽取10个文件作为数据集
-    generator = KerasMultiFileDatasetGenerator(features_pattern, labels_pattern, batch_size=128, num_files=36)
+    generator = KerasMultiFileDatasetGenerator(features_pattern, labels_pattern, batch_size=256, num_files=50)
     train_dataset = generator.create_dataset()
 
     total_features_count = 0

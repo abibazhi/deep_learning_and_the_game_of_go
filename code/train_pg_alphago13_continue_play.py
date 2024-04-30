@@ -4,7 +4,7 @@ from keras.models import load_model
 from dlgo import httpfrontend
 
 
-latest_model_path = "../../checkpoints/alphago_100.keras"
+latest_model_path = "../../checkpoints/alphago_con_200.keras"
 print(latest_model_path)
 alphago_sl_policy = load_model(latest_model_path, compile=False)  # 加载模型权重
 
