@@ -50,7 +50,8 @@ class AlphaGoEncoder(Encoder):
         return 'alphago'
 
     def encode(self, game_state):
-        board_tensor = np.zeros((self.num_planes, self.board_height, self.board_width))
+        #np.zeros(shape=(height, width), dtype=np.int8)
+        board_tensor = np.zeros((self.num_planes, self.board_height, self.board_width), dtype=np.int8)
         for r in range(self.board_height):
             for c in range(self.board_width):
                 point = Point(row=r + 1, col=c + 1)

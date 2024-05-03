@@ -2,12 +2,14 @@
 import numpy as np
 from keras import backend as K
 from keras.optimizers import SGD
+from keras.callbacks import ModelCheckpoint 
 
 from dlgo.agent.base import Agent
 from dlgo.agent.helpers import is_point_an_eye
 from dlgo import encoders
 from dlgo import goboard
 from dlgo import kerasutil
+
 
 __all__ = [
     'PolicyAgent',
@@ -52,7 +54,14 @@ class PolicyAgent(Agent):
     def select_move(self, game_state):
         num_moves = self._encoder.board_width * self._encoder.board_height
 
-        board_tensor = self._encoder.encode(game_state)
+        board_tensor_pre = self._encoder.encode(game_state)
+        #board_tensor = tf.transpose(board_tensor_pre, perm=[1, 2, 0])  # 注意 perm 参数的顺序
+        board_tensor = np.moveaxis(board_tensor_pre, 0, -1)  # 将第0轴移动到最后
+        #print(f"转换前{board_tensor.dtype}")
+        #board_tensor.astype(np.int8)
+        #print(f"转换后{board_tensor.dtype}")
+
+        
         x = np.array([board_tensor])
 
         if np.random.random() < self._temperature:
@@ -60,7 +69,7 @@ class PolicyAgent(Agent):
             move_probs = np.ones(num_moves) / num_moves
         else:
             # Follow our current policy.
-            move_probs = self._model.predict(x)[0]
+            move_probs = self._model.predict(x,verbose=0)[0]
 
         # Prevent move probs from getting stuck at 0 or 1.
         eps = 1e-5
@@ -96,7 +105,7 @@ class PolicyAgent(Agent):
         kerasutil.save_model_to_hdf5_group(self._model, h5file['model'])
 
     def train(self, experience, lr=0.0000001, clipnorm=1.0, batch_size=512):
-        opt = SGD(lr=lr, clipnorm=clipnorm)
+        opt = SGD(learning_rate=lr, clipnorm=clipnorm)
         self._model.compile(loss='categorical_crossentropy', optimizer=opt)
 
         n = experience.states.shape[0]
@@ -111,6 +120,7 @@ class PolicyAgent(Agent):
         self._model.fit(
             experience.states, y,
             batch_size=batch_size,
+            callbacks=[ModelCheckpoint('../checkpoints/alphago_rl_{epoch}.keras')],
             epochs=1)
 
 

@@ -4,6 +4,7 @@ from dlgo import goboard_fast as goboard
 from dlgo.gotypes import Player
 
 from collections import namedtuple
+import datetime
 
 
 class GameRecord(namedtuple('GameRecord', 'moves winner margin')):
@@ -18,12 +19,14 @@ def simulate_game(black_player, white_player):
         Player.white: white_player,
     }
     while not game.is_over():
+        #print("before select_move")
         next_move = agents[game.next_player].select_move(game)
+        #print("after select_move ")
         moves.append(next_move)
         game = game.apply_move(next_move)
 
     game_result = scoring.compute_game_result(game)
-    print(game_result)
+    print(f"结果：{game_result}，总步数：{len(moves)}")
 
     return GameRecord(
         moves=moves,
@@ -38,6 +41,7 @@ def experience_simulation(num_games, agent1, agent2):
 
     color1 = Player.black
     for i in range(num_games):
+        print(f"{i}begin，{datetime.datetime.now()}")
         collector1.begin_episode()
         agent1.set_collector(collector1)
         collector2.begin_episode()

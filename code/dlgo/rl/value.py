@@ -8,6 +8,9 @@ from dlgo import kerasutil
 from dlgo.agent import Agent
 from dlgo.agent.helpers import is_point_an_eye
 
+from keras.callbacks import ModelCheckpoint 
+
+
 __all__ = [
     'ValueAgent',
     'load_value_agent',
@@ -107,7 +110,7 @@ class ValueAgent(Agent):
             replace=False)
 
     def train(self, experience, lr=0.1, batch_size=128):
-        opt = SGD(lr=lr)
+        opt = SGD(learning_rate=lr)
         self.model.compile(loss='mse', optimizer=opt)
 
         n = experience.states.shape[0]
@@ -120,6 +123,7 @@ class ValueAgent(Agent):
         self.model.fit(
             experience.states, y,
             batch_size=batch_size,
+            callbacks=[ModelCheckpoint('../checkpoints/alphago_value_{epoch}.keras')],
             epochs=1)
 
     def serialize(self, h5file):

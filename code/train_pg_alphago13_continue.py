@@ -1,3 +1,9 @@
+# policy之后的强化训练，用的本文件。
+# 加上play后，是试一下看看。train_pg_alphago13_continue_play.py
+# generator后面又有学习研究，但是在此时，本文件还应该是用一次性加载的办法。
+# 不过，由于sample时，去掉了固定种子，因此每次训练的棋谱肯定不一样。这是不利于提高准确率的。
+# 但是真要训练，去掉这个固定种子是对的。或者用其他办法，覆盖到更多棋谱。
+
 import random
 from dlgo.data.parallel_processor import GoDataProcessor
 from dlgo.encoders.alphago import AlphaGoEncoder
