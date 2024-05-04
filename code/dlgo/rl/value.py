@@ -124,7 +124,7 @@ class ValueAgent(Agent):
             experience.states, y,
             batch_size=batch_size,
             callbacks=[ModelCheckpoint('../checkpoints/alphago_value_{epoch}.keras')],
-            epochs=1)
+            epochs=10)
 
     def serialize(self, h5file):
         h5file.create_group('encoder')

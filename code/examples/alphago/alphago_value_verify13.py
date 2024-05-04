@@ -15,7 +15,7 @@ alphago_value = ValueAgent(alphago_value_network, encoder)
 # end::init_value[]
 
 # tag::train_value[]
-experience = load_experience(h5py.File('alphago_rl_experience.h5', 'r'))
+experience = load_experience(h5py.File('verify13_improve/alphago_rl_experience.h5', 'r'))
 
 alphago_value.train(experience)
 
