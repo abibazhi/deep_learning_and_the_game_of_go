@@ -1,5 +1,15 @@
+code/verify13_fastpolicy/data
 code/data
 code/data1
+
+checkpoints/
+.vscode/
+
+kgs_index.html
+filelist.txt
+selected_files.txt
+test_samples.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
