@@ -58,6 +58,7 @@ def load_policy_agent():
 
     #alphago_sl_agent = DeepLearningAgent(alphago_sl_policy, encoder)
     alphago_policy_agent = PolicyAgent(alphago_rl_model, encoder)
+    alphago_policy_agent.set_temperature(0.5)
     return alphago_policy_agent
 
 

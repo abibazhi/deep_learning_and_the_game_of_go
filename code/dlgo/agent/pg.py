@@ -69,8 +69,11 @@ class PolicyAgent(Agent):
         
         x = np.array([board_tensor])
 
-        if np.random.random() < self._temperature:
+        temperature = np.random.random()
+
+        if temperature() < self._temperature:
             # Explore random moves.
+            print(f"temperature={temperature},self._temperature={self._temperature}选择了random了")
             move_probs = np.ones(num_moves) / num_moves
         else:
             # Follow our current policy.
