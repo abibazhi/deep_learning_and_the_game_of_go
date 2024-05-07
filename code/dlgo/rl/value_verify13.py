@@ -31,6 +31,9 @@ class ValueAgent(Agent):
     def predict(self, game_state):
         encoded_state = self.encoder.encode(game_state)
         input_tensor = np.array([encoded_state])
+        input_tensor = np.moveaxis(input_tensor, 1, -1)  # 将第1轴移动到最后
+        print("value_predict...")
+
         return self.model.predict(input_tensor)[0]
 
     def set_temperature(self, temperature):

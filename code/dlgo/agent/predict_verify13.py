@@ -26,13 +26,13 @@ class DeepLearningAgent(Agent):
     def predict(self, game_state):
         encoded_state = self.encoder.encode(game_state)
         input_tensor = np.array([encoded_state])
-        print("aaaaaaaaaaaaaaaaaddd")
-        print(input_tensor.shape)
+        #print("deeplearningagent predict...")
+        #print(input_tensor.shape)
         #print(input_tensor[0].shape)
         input_tensor_bhwc = tf.transpose(input_tensor, perm=[0, 2, 3, 1])  # 注意 perm 参数的顺序
-        print(input_tensor_bhwc)
+        #print(input_tensor_bhwc)
         #return self.model.predict(input_tensor)
-        return self.model.predict(input_tensor_bhwc)[0]
+        return self.model.predict(input_tensor_bhwc, verbose=0)[0]
 
     def select_move(self, game_state):
         num_moves = self.encoder.board_width * self.encoder.board_height

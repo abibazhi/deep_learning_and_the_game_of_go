@@ -4,6 +4,7 @@ from dlgo.agent.base import Agent
 from dlgo.goboard_fast import Move
 from dlgo import kerasutil
 import operator
+from datetime import datetime
 # end::alphago_imports[]
 
 
@@ -66,8 +67,8 @@ class AlphaGoNode:
 # tag::alphago_mcts_init[]
 class AlphaGoMCTS(Agent):
     def __init__(self, policy_agent, fast_policy_agent, value_agent,
-                 lambda_value=0.5, num_simulations=1000,
-                 depth=50, rollout_limit=100):
+                 lambda_value=0.5, num_simulations=2,
+                 depth=5, rollout_limit=100):
         self.policy = policy_agent
         self.rollout_policy = fast_policy_agent
         self.value = value_agent
@@ -90,17 +91,21 @@ class AlphaGoMCTS(Agent):
                         break
                     moves, probabilities = self.policy_probabilities(current_state)  # <4>
                     node.expand_children(moves, probabilities)  # <4>
+                    print("after expand_children")
 
                 move, node = node.select_child()  # <5>
+                print(f"被选中的move：{move}")
                 current_state = current_state.apply_move(move)  # <5>
 
-            value = self.value.predict(current_state)  # <6>
-            rollout = self.policy_rollout(current_state)  # <6>
+                value = self.value.predict(current_state)  # <6>
+                #rollout = self.policy_rollout(current_state,simulation,self.num_simulations)  # <6>
+                print(f"{datetime.now()}:{simulation}/{self.num_simulations},{depth}/{self.depth}")
+                rollout = self.policy_rollout(current_state)  # <6>
 
-            weighted_value = (1 - self.lambda_value) * value + \
-                self.lambda_value * rollout  # <7>
+                weighted_value = (1 - self.lambda_value) * value + \
+                    self.lambda_value * rollout  # <7>
 
-            node.update_values(weighted_value)  # <8>
+                node.update_values(weighted_value)  # <8>
 # <1> From current state play out a number of simulations
 # <2> Play moves until the specified depth is reached.
 # <3> If the current node doesn't have any children...
@@ -139,8 +144,10 @@ class AlphaGoMCTS(Agent):
 # end::alphago_policy_probs[]
 
 # tag::alphago_policy_rollout[]
+    #def policy_rollout(self, game_state,num_simulation,num_simulations):
     def policy_rollout(self, game_state):
         for step in range(self.rollout_limit):
+            #print(f"rolloout progress:{step}step/{self.rollout_limit},{num_simulation}/{num_simulations}")
             if game_state.is_over():
                 break
             move_probabilities = self.rollout_policy.predict(game_state)

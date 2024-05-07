@@ -43,6 +43,11 @@ class PolicyAgent(Agent):
     def predict(self, game_state):
         encoded_state = self._encoder.encode(game_state)
         input_tensor = np.array([encoded_state])
+        print("aaadddd")
+        print(input_tensor.shape)
+        input_tensor = np.moveaxis(input_tensor, 1, -1)  # 将第1轴移动到最后
+        print(input_tensor.shape)
+
         return self._model.predict(input_tensor)[0]
 
     def set_temperature(self, temperature):
