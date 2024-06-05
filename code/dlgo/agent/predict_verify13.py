@@ -32,7 +32,11 @@ class DeepLearningAgent(Agent):
         input_tensor_bhwc = tf.transpose(input_tensor, perm=[0, 2, 3, 1])  # 注意 perm 参数的顺序
         #print(input_tensor_bhwc)
         #return self.model.predict(input_tensor)
-        return self.model.predict(input_tensor_bhwc, verbose=0)[0]
+        res = self.model.predict(input_tensor_bhwc, verbose=0)[0]
+        print('resres:')
+        print(type(res),len(res))
+        return res
+        #return self.model.predict(input_tensor_bhwc, verbose=0)[0]
 
     def select_move(self, game_state):
         num_moves = self.encoder.board_width * self.encoder.board_height

@@ -119,6 +119,9 @@ class Board():
         assert self.is_on_grid(point)
         if self._grid.get(point) is not None:
             print('Illegal play on %s' % str(point))
+            gostr = self.get_go_string(point)
+            print(gostr)
+            
         assert self._grid.get(point) is None
         # 0. Examine the adjacent points.
         adjacent_same_color = []

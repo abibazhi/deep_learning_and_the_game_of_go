@@ -18,6 +18,10 @@ from dlgo import httpfrontend
 from dlgo.agent.pg import PolicyAgent
 from dlgo.agent.pg_verify13 import PolicyAgent as BWHCPolicyAgent
 
+from dlgo.mcts.mcts_verify13 import MCTSAgent
+from dlgo.encoders import OnePlaneEncoder
+
+
 
 def load_fastpolicy_agent():
     # 9.3.3 Initializing an agent
@@ -86,12 +90,19 @@ def load_alphago_agent_new():
     alphago = AlphaGoMCTS(strong_policy, fast_policy, value)
     return alphago 
 
+def load_mcts_agent():
+    encoder = OnePlaneEncoder((7,7))
+    mcts_agent = MCTSAgent(700, 0.5, encoder)
+    return mcts_agent    
+
 
 #agent = load_policy_agent()
 #agent = load_prediction_agent()
 #agent = load_value_agent()
 #agent = load_alphago_agent()
 #agent = load_fastpolicy_agent()
-agent = load_alphago_agent_new()
-web_app = httpfrontend.get_web_app({'predict': agent})
+#agent = load_alphago_agent_new()
+agent = load_mcts_agent()
+#web_app = httpfrontend.get_web_app({'predict': agent})
+web_app = httpfrontend.get_web_app({'mcts': agent})
 web_app.run()
