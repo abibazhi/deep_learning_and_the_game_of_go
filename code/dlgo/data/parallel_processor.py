@@ -57,17 +57,30 @@ class GoDataProcessor:
 # end::load_generator[]
 
     def unzip_data(self, zip_file_name):
-        this_gz = gzip.open(self.data_dir + '/' + zip_file_name)
+        try:
+            this_gz = gzip.open(self.data_dir + '/' + zip_file_name)
 
-        tar_file = zip_file_name[0:-3]
-        this_tar = open(self.data_dir + '/' + tar_file, 'wb')
+            tar_file = zip_file_name[0:-3]
+            print(zip_file_name)
+            
+            this_tar = open(self.data_dir + '/' + tar_file, 'wb')
 
-        shutil.copyfileobj(this_gz, this_tar)
-        this_tar.close()
-        return tar_file
+            shutil.copyfileobj(this_gz, this_tar)
+            this_tar.close()
+            return tar_file
+        except (OSError, IOError) as e:
+            print(f"Error occurred while processing {zip_file_name}: {e}")
+            return None
 
     def process_zip(self, zip_file_name, data_file_name, game_list):
+        list1 = ["KGS-2006-19-10388-.tar.gz","KGS-2011-19-19099-.tar.gz","KGS-2015-19-8133-.tar.gz","KGS-2012-19-13665-.tar.gz"]
+        if zip_file_name in list1:
+            print("skip "+zip_file_name)
+            return
         tar_file = self.unzip_data(zip_file_name)
+        if tar_file is None:
+            return
+
         zip_file = tarfile.open(self.data_dir + '/' + tar_file)
         name_list = zip_file.getnames()
         total_examples = self.num_total_examples(zip_file, game_list, name_list)

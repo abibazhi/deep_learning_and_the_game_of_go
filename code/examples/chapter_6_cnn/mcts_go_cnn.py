@@ -1,14 +1,15 @@
 from __future__ import print_function
+#from tqdm.keras import TqdmCallback
 
 # tag::mcts_go_cnn_preprocessing[]
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Conv2D, MaxPooling2D, AveragePooling2D
 
 np.random.seed(123)
-X = np.load('../generated_games/features-40k.npy')
-Y = np.load('../generated_games/labels-40k.npy')
+X = np.load('../../generated_games/features-40k.npy')
+Y = np.load('../../generated_games/labels-40k.npy')
 
 samples = X.shape[0]
 size = 9
@@ -31,10 +32,10 @@ model.add(Dropout(rate=0.5))
 model.add(Conv2D(48, (3, 3),
                  padding='same', activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(rate=0.5))
+model.add(Dropout(rate=0.382))
 model.add(Flatten())
-model.add(Dense(512, activation='relu'))
-model.add(Dropout(rate=0.5))
+model.add(Dense(256, activation='relu'))
+model.add(Dropout(rate=0.382))
 model.add(Dense(size * size, activation='softmax'))
 model.summary()
 
@@ -44,9 +45,12 @@ model.compile(loss='categorical_crossentropy',
 # end::mcts_go_cnn_model[]
 
 # tag::mcts_go_cnn_eval[]
+
+#progress_bar_callback = TqdmCallback(verbose=1)
+
 model.fit(X_train, Y_train,
           batch_size=64,
-          epochs=100,
+          epochs=150,
           verbose=1,
           validation_data=(X_test, Y_test))
 score = model.evaluate(X_test, Y_test, verbose=0)
